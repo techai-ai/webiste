@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI Demo | TechAI Inc</title><meta name="description" content="TechAI Inc — Practical AI from strategy to production."><meta property="og:title" content="AI Demo | TechAI Inc"><meta property="og:description" content="TechAI Inc — Practical AI from strategy to production."><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/demo/"><meta property="og:image" content="/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AI Demo | TechAI Inc"><meta name="twitter:description" content="TechAI Inc — Practical AI from strategy to production."><meta name="twitter:image" content="/og.png"><link rel="stylesheet" href="/_astro/about.zxLMeIqb.css"></head> <body class="min-h-screen bg-[#0b0d1f] text-gray-100 font-sans"> <nav class="sticky top-0 z-50 px-6 md:px-20 py-5 flex items-center justify-between bg-transparent"> <a href="/" data-no-active-style aria-label="TechAI Home" class="inline-flex items-center"> <img src="/logo.png" alt="TechAI logo" class="h-14 md:h-16 w-auto brand-logo"> </a> <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-md border border-white/15 text-gray-200 hover:text-white hover:bg-white/5 transition" aria-label="Open menu" aria-expanded="false"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line> </svg> </button> <div id="mainNav" class="hidden md:flex items-center gap-8 text-gray-200 relative"> <a href="/about" class="nav-link nav-glow hover:text-white transition">About</a> <div id="servicesGroup" class="relative group"> <a href="/services" class="nav-link nav-glow hover:text-white transition">Services</a> <div id="servicesDropdown" class="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-50 transition ease-out duration-200 opacity-0 -translate-y-1 scale-95 pointer-events-none"> <div class="min-w-[560px] rounded-lg border border-white/10 bg-[#0b0d1f]/95 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.35)] p-2"> <div class="grid grid-cols-2 gap-1 dropdown-grid"> <a data-no-active-style href="/services#core-ai-ml" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🧠 Core AI & Machine Learning</a> <a data-no-active-style href="/services#generative-ai" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🤖 Generative AI Solutions</a> <a data-no-active-style href="/services#ai-strategy" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">💡 AI Strategy & Consulting</a> <a data-no-active-style href="/services#data-engineering-mlops" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">⚙️ Data Engineering & MLOps</a> <a data-no-active-style href="/services#ai-automation-aiops" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🧩 AI Automation & AIOps</a> <a data-no-active-style href="/services#conversational-ai" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">💬 Conversational AI & Agents</a> <a data-no-active-style href="/services#document-intelligence" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🧾 Document Intelligence</a> <a data-no-active-style href="/services#predictive-analytics" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">📊 Predictive Analytics & Insights</a> <a data-no-active-style href="/services#industry-solutions" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🧭 Industry-Specific AI Solutions</a> <a data-no-active-style href="/services#responsible-ai" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🔐 Responsible & Secure AI</a> </div> </div> </div> </div> <div id="industriesGroup" class="relative group"> <a href="/industries" class="nav-link nav-glow hover:text-white transition">Industries</a> <div id="industriesDropdown" class="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-50 transition ease-out duration-200 opacity-0 -translate-y-1 scale-95 pointer-events-none"> <div class="min-w-[560px] rounded-lg border border-white/10 bg-[#0b0d1f]/95 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.35)] p-2"> <div class="grid grid-cols-2 gap-1 dropdown-grid"> <a data-no-active-style href="/industries#finance-insurance" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">💰 Finance & Insurance</a> <a data-no-active-style href="/industries#healthcare-life-sciences" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">❤️ Healthcare & Life Sciences</a> <a data-no-active-style href="/industries#travel-transportation" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">✈️ Travel & Transportation</a> <a data-no-active-style href="/industries#logistics-moving" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🚚 Logistics & Moving</a> <a data-no-active-style href="/industries#manufacturing-energy" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🏭 Manufacturing & Energy</a> <a data-no-active-style href="/industries#retail-ecommerce" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🛍️ Retail & E-Commerce</a> <a data-no-active-style href="/industries#realestate-construction" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🏗️ Real Estate & Construction</a> <a data-no-active-style href="/industries#technology-saas" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">💻 Technology & SaaS</a> <a data-no-active-style href="/industries#public-sector-education" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🏛️ Public Sector & Education</a> <a data-no-active-style href="/industries#agriculture-environment" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">🌿 Agriculture & Environment</a> <a data-no-active-style href="/industries#telecom-media" class="block px-3 py-2 rounded-md text-gray-200 hover:text-white hover:bg-white/5 transition">📡 Telecom & Media</a> </div> </div> </div> </div> <a href="/careers" class="nav-link nav-glow hover:text-white transition">Careers</a> <a href="/contact" class="nav-link nav-glow hover:text-white transition">Contact</a> <a href="/demo" class="btn-glow">Try Demo</a> </div> </nav> <!-- Mobile menu overlay --> <div id="mobileMenu" class="md:hidden hidden fixed inset-0 z-50 bg-[#0b0d1f]/95 backdrop-blur-md"> <div class="px-6 pt-5 pb-8 flex items-center justify-between"> <a href="/" data-no-active-style class="inline-flex items-center"> <img src="/logo.png" alt="TechAI logo" class="h-12 w-auto"> </a> <button id="mobileMenuClose" class="inline-flex items-center justify-center w-11 h-11 rounded-md border border-white/15 text-gray-200 hover:text-white hover:bg-white/5 transition" aria-label="Close menu"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="18" y1="6" x2="6" y2="18"></line> <line x1="6" y1="6" x2="18" y2="18"></line> </svg> </button> </div> <nav class="px-6 space-y-1 text-gray-200"> <a href="/about" class="block px-3 py-3 rounded-md hover:bg-white/5">About</a> <div> <button id="mobileServicesToggle" class="w-full flex items-center justify-between px-3 py-3 rounded-md hover:bg-white/5"> <span>Services</span> <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> </button> <div id="mobileServicesSub" class="ml-3 mt-1 hidden"> <a data-no-active-style href="/services#core-ai-ml" class="block px-3 py-2 rounded-md hover:bg-white/5">🧠 Core AI & Machine Learning</a> <a data-no-active-style href="/services#generative-ai" class="block px-3 py-2 rounded-md hover:bg-white/5">🤖 Generative AI Solutions</a> <a data-no-active-style href="/services#ai-strategy" class="block px-3 py-2 rounded-md hover:bg-white/5">💡 AI Strategy & Consulting</a> <a data-no-active-style href="/services#data-engineering-mlops" class="block px-3 py-2 rounded-md hover:bg-white/5">⚙️ Data Engineering & MLOps</a> <a data-no-active-style href="/services#ai-automation-aiops" class="block px-3 py-2 rounded-md hover:bg-white/5">🧩 AI Automation & AIOps</a> <a data-no-active-style href="/services#conversational-ai" class="block px-3 py-2 rounded-md hover:bg-white/5">💬 Conversational AI & Agents</a> <a data-no-active-style href="/services#document-intelligence" class="block px-3 py-2 rounded-md hover:bg-white/5">🧾 Document Intelligence</a> <a data-no-active-style href="/services#predictive-analytics" class="block px-3 py-2 rounded-md hover:bg-white/5">📊 Predictive Analytics & Insights</a> <a data-no-active-style href="/services#industry-solutions" class="block px-3 py-2 rounded-md hover:bg-white/5">🧭 Industry-Specific AI Solutions</a> <a data-no-active-style href="/services#responsible-ai" class="block px-3 py-2 rounded-md hover:bg-white/5">🔐 Responsible & Secure AI</a> </div> </div> <div> <button id="mobileIndustriesToggle" class="w-full flex items-center justify-between px-3 py-3 rounded-md hover:bg-white/5"> <span>Industries</span> <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> </button> <div id="mobileIndustriesSub" class="ml-3 mt-1 hidden"> <a data-no-active-style href="/industries#finance-insurance" class="block px-3 py-2 rounded-md hover:bg-white/5">💰 Finance & Insurance</a> <a data-no-active-style href="/industries#healthcare-life-sciences" class="block px-3 py-2 rounded-md hover:bg-white/5">❤️ Healthcare & Life Sciences</a> <a data-no-active-style href="/industries#travel-transportation" class="block px-3 py-2 rounded-md hover:bg-white/5">✈️ Travel & Transportation</a> <a data-no-active-style href="/industries#logistics-moving" class="block px-3 py-2 rounded-md hover:bg-white/5">🚚 Logistics & Moving</a> <a data-no-active-style href="/industries#manufacturing-energy" class="block px-3 py-2 rounded-md hover:bg-white/5">🏭 Manufacturing & Energy</a> <a data-no-active-style href="/industries#retail-ecommerce" class="block px-3 py-2 rounded-md hover:bg-white/5">🛍️ Retail & E-Commerce</a> <a data-no-active-style href="/industries#realestate-construction" class="block px-3 py-2 rounded-md hover:bg-white/5">🏗️ Real Estate & Construction</a> <a data-no-active-style href="/industries#technology-saas" class="block px-3 py-2 rounded-md hover:bg-white/5">💻 Technology & SaaS</a> <a data-no-active-style href="/industries#public-sector-education" class="block px-3 py-2 rounded-md hover:bg-white/5">🏛️ Public Sector & Education</a> <a data-no-active-style href="/industries#agriculture-environment" class="block px-3 py-2 rounded-md hover:bg-white/5">🌿 Agriculture & Environment</a> <a data-no-active-style href="/industries#telecom-media" class="block px-3 py-2 rounded-md hover:bg-white/5">📡 Telecom & Media</a> </div> </div> <a href="/careers" class="block px-3 py-3 rounded-md hover:bg-white/5">Careers</a> <a href="/contact" class="block px-3 py-3 rounded-md hover:bg-white/5">Contact</a> <a href="/demo" class="block px-3 py-3 rounded-md hover:bg-white/5">Try Demo</a> </nav> </div> <main id="app" class="transition-opacity duration-200">   <section class="py-24 px-6 md:px-20 text-center relative overflow-hidden"> <div class="absolute inset-0 bg-gradient-to-b from-cyan-700/20 via-emerald-700/15 to-black/25 blur-3xl"></div> <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10"> <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.35)]">Text-to-SQL <span class="text-cyan-400">Demo</span></h1> <p class="text-gray-300 text-lg">Try a lightweight preview of our natural-language to SQL experience.</p> </div> </section> <section class="py-16 px-6 md:px-20"> <div class="max-w-6xl mx-auto bg-transparent border border-cyan-900/40 rounded-2xl p-8 shadow-[0_0_25px_rgba(6,182,212,0.25)]"> <h2 class="text-2xl font-bold text-white mb-4">Preview</h2> <div class="mb-6"> <div class="bg-transparent border border-cyan-900/40 rounded-xl p-4"> <div class="flex items-center justify-between mb-2"> <h3 class="text-white font-semibold">History</h3> <button id="clear-saved" class="text-xs text-cyan-200 hover:underline">Clear</button> </div> <div id="saved-list" class="space-y-2 max-h-[20rem] overflow-y-auto"> <p class="text-gray-400 text-sm">No saved queries yet.</p> </div> </div> </div> <div class="grid md:grid-cols-2 gap-6 text-left"> <div> <label for="nlq" class="block text-gray-300 mb-2 font-medium">Your question</label> <div class="flex flex-col gap-3"> <div class="flex flex-wrap gap-2"> <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="total revenue by month for 2024">Revenue by month</button> <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="count orders last 30 days">Orders last 30 days</button> <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="average sales by week for 2023">Avg sales by week</button> </div> <textarea id="nlq" rows="6" placeholder="e.g., total revenue by month for 2024" class="w-full px-4 py-3 rounded-md bg-[#0c1520] border border-cyan-900/40 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-700 outline-none text-white placeholder-gray-400 transition resize-none"></textarea> <div class="flex items-center gap-3"> <button id="gen" class="btn-glow btn-glow-sm">Generate</button> <button id="save" class="px-3 py-1.5 rounded-md border border-cyan-900/40 text-gray-200 hover:bg-cyan-900/30">Save</button> <p class="text-xs text-gray-400">Client-only mock — no network requests.</p> </div> </div> </div> <div> <div class="space-y-4"> <div> <label for="answer" class="block text-gray-300 mb-2 font-medium">Response</label> <textarea id="answer" rows="12" readonly class="w-full px-4 py-3 rounded-md bg-[#081018] border border-cyan-900/40 text-gray-200 resize-none"></textarea> </div> <div> <button id="toggle-sql" class="px-3 py-1.5 rounded-md border border-cyan-900/40 text-gray-200 hover:bg-cyan-900/30">Show SQL</button> </div> <div id="sql-container" class="hidden"> <label for="sql" class="block text-gray-300 mb-2 font-medium">Generated SQL</label> <textarea id="sql" rows="12" readonly class="w-full px-4 py-3 rounded-md bg-[#081018] border border-cyan-900/40 text-gray-200 resize-none"></textarea> </div> </div> </div> </div> </div> </section> <script>
+    (function(){
+      const btn = document.getElementById('gen');
+      if (!btn) return;
+      const nlq = document.getElementById('nlq');
+      const sql = document.getElementById('sql');
+
+      function normalize(s){ return (s || '').toLowerCase(); }
+      function contains(s, arr){ s = normalize(s); return arr.some(k => s.includes(k)); }
+
+      function generateMockSql(question){
+        const q = question.trim();
+        if (!q) return { sql: '/* enter a question above */', meta: { table: '', metricAlias: '', timeAlias: '' } };
+
+        const nq = normalize(q);
+        let table = '`demo.transactions`';
+        let metricExpr = 'SUM(amount)';
+        let metricAlias = 'total_revenue';
+
+        if (contains(nq, ['order','orders'])) {
+          table = '`demo.orders`';
+          metricExpr = contains(nq, ['avg','average']) ? 'AVG(total_amount)' : contains(nq, ['sum','revenue','sales']) ? 'SUM(total_amount)' : 'COUNT(*)';
+          metricAlias = metricExpr.startsWith('COUNT') ? 'order_count' : 'total_sales';
+        } else if (contains(nq, ['user','customer'])) {
+          table = '`demo.users`';
+          metricExpr = 'COUNT(*)';
+          metricAlias = 'user_count';
+        } else if (contains(nq, ['revenue','sales'])) {
+          table = '`demo.transactions`';
+          metricExpr = contains(nq, ['avg','average']) ? 'AVG(amount)' : 'SUM(amount)';
+          metricAlias = metricExpr.startsWith('AVG') ? 'avg_revenue' : 'total_revenue';
+        }
+
+        let timeExpr = 'DATE(created_at)';
+        let timeAlias = 'day';
+        if (contains(nq, ['month'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), MONTH)'; timeAlias = 'month'; }
+        else if (contains(nq, ['year'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), YEAR)'; timeAlias = 'year'; }
+        else if (contains(nq, ['week'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), WEEK)'; timeAlias = 'week'; }
+
+        const whereParts = [];
+        const yearMatch = nq.match(/20\d{2}/);
+        if (yearMatch) whereParts.push(`EXTRACT(YEAR FROM DATE(created_at)) = ${yearMatch[0]}`);
+        if (contains(nq, ['last 30 days','past 30 days'])) whereParts.push('DATE(created_at) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)');
+        if (contains(nq, ['last 7 days','past 7 days'])) whereParts.push('DATE(created_at) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)');
+
+        const whereClause = whereParts.length ? `\nWHERE ${whereParts.join(' AND ')}` : '';
+        const groupOrder = `\nGROUP BY ${timeAlias}\nORDER BY ${timeAlias}`;
+        const sql = `/* demo: intent -> ${q.replace(/\*\//g,'*\/')} */\n\nSELECT\n  ${timeExpr} AS ${timeAlias},\n  ${metricExpr} AS ${metricAlias}\nFROM ${table}${whereClause}${groupOrder};`;
+        return { sql, meta: { table, metricExpr, metricAlias, timeExpr, timeAlias, where: whereClause } };
+      }
+
+      function seededRand(seed){ let x = Math.imul(9301, seed) + 49297; return () => { x = (Math.imul(x,1103515245)+12345) & 0x7fffffff; return (x % 10000) / 10000; }; }
+      function generateMockAnswer(question, meta){
+        const seed = Array.from(question).reduce((a,c)=>a + c.charCodeAt(0), 0) || 1;
+        const rand = seededRand(seed);
+        const grain = meta.timeAlias || 'period';
+        const metric = meta.metricAlias || 'value';
+        const buckets = grain === 'month' ? 6 : grain === 'week' ? 4 : grain === 'year' ? 3 : 7;
+        const samples = Array.from({length: buckets}, (_,i)=> Math.round((rand()*0.6+0.2)*1000)*10);
+        const total = samples.reduce((a,b)=>a+b,0);
+        const label = grain.charAt(0).toUpperCase()+grain.slice(1);
+        const example = samples.slice(0, Math.min(3, samples.length)).map((v,i)=>`${label} ${i+1}: ${v.toLocaleString()}`).join(', ');
+        return `Estimated ${metric.replace(/_/g,' ')} by ${grain}: ${example}.\nApproximate total: ${total.toLocaleString()}.\n(Note: simulated demo answer based on your question and generated SQL.)`;
+      }
+
+      function generate(){
+        const q = (nlq.value || '').trim();
+        const result = generateMockSql(q);
+        sql.value = result.sql;
+        const ans = document.getElementById('answer');
+        if (ans) ans.value = generateMockAnswer(q, result.meta);
+        const sqlWrap = document.getElementById('sql-container');
+        const toggle = document.getElementById('toggle-sql');
+        if (sqlWrap) sqlWrap.classList.add('hidden');
+        if (toggle) toggle.textContent = 'Show SQL';
+      }
+
+      btn.addEventListener('click', generate);
+      document.querySelectorAll('.sample-chip').forEach(el => el.addEventListener('click', () => { const s = el.getAttribute('data-sample') || ''; nlq.value = s; generate(); }));
+
+      // SQL toggle
+      (function(){
+        const sqlWrap = document.getElementById('sql-container');
+        const toggle = document.getElementById('toggle-sql');
+        function setLabel(){ if (toggle && sqlWrap) toggle.textContent = sqlWrap.classList.contains('hidden') ? 'Show SQL' : 'Hide SQL'; }
+        toggle && toggle.addEventListener('click', () => { if (!sqlWrap) return; sqlWrap.classList.toggle('hidden'); setLabel(); });
+        setLabel();
+      })();
+
+      // Saved queries sidebar
+      const saveBtn = document.getElementById('save');
+      const savedList = document.getElementById('saved-list');
+      const clearSaved = document.getElementById('clear-saved');
+      function getSaved(){ try { return JSON.parse(localStorage.getItem('demoSavedQueries') || '[]'); } catch { return []; } }
+      function setSaved(list){ localStorage.setItem('demoSavedQueries', JSON.stringify(list)); }
+      function renderSaved(){ const list = getSaved(); if (!savedList) return; if (!list.length){ savedList.innerHTML = '<p class="text-gray-400 text-sm">No saved queries yet.</p>'; return; } savedList.innerHTML = list.map(item => `
+          <div class="group border border-cyan-900/40 rounded-md p-3 bg-[#0c1520] hover:bg-[#102030] transition" data-id="${item.id}">
+            <div class="flex items-center justify-between">
+              <button class="text-left text-gray-200 hover:text-white truncate" data-action="load" title="${item.question}">${item.question}</button>
+              <button class="text-xs text-gray-400 hover:text-red-300" data-action="delete">Delete</button>
+            </div>
+            <div class="text-[11px] text-gray-500 mt-1">${new Date(item.ts).toLocaleString()}</div>
+          </div>`).join(''); }
+      function saveCurrent(){ const q = (nlq.value || '').trim(); if (!q || !sql.value) return; const list = getSaved(); const id = Date.now().toString(36)+Math.random().toString(36).slice(2,6); const entry = { id, question: q, sql: sql.value, answer: (document.getElementById('answer')||{}).value || '', meta: {}, ts: Date.now() }; list.unshift(entry); setSaved(list.slice(0,50)); renderSaved(); }
+      function loadSaved(id){ const list = getSaved(); const item = list.find(x => x.id === id); if (!item) return; nlq.value = item.question; sql.value = item.sql; const ans = document.getElementById('answer'); if (ans) ans.value = item.answer || ''; }
+      savedList && savedList.addEventListener('click', (e) => { const target = e.target; if (!(target instanceof Element)) return; const wrap = target.closest('[data-id]'); const id = wrap && wrap.getAttribute('data-id'); if (!id) return; const action = target.getAttribute('data-action'); if (action === 'delete'){ const list = getSaved().filter(x => x.id !== id); setSaved(list); renderSaved(); } else { loadSaved(id); } });
+      saveBtn && saveBtn.addEventListener('click', saveCurrent);
+      clearSaved && clearSaved.addEventListener('click', () => { setSaved([]); renderSaved(); });
+      renderSaved();
+    })();
+  </script>  <footer class="mt-20 border-t border-blue-900/30 bg-[#0b0d1f]/85 backdrop-blur-sm"> <div class="px-6 md:px-20 py-20 grid gap-6 md:grid-cols-4 items-start text-sm"> <div> <div class="space-y-4"> <img src="/logo.png" alt="TechAI logo" class="h-10 md:h-12 w-auto brand-logo"> <div class="flex items-center gap-4"> <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]"> <span class="sr-only">Facebook</span> <span class="text-base font-semibold">f</span> </a> <a href="#" aria-label="X (Twitter)" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]"> <span class="sr-only">X</span> <span class="text-base font-semibold">X</span> </a> <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]"> <span class="sr-only">Instagram</span> <span class="text-base font-semibold">ig</span> </a> <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]"> <span class="sr-only">LinkedIn</span> <span class="text-base font-semibold">in</span> </a> </div> </div> <p class="text-gray-400 mt-2 max-w-sm">Empowering businesses with practical AI — from strategy to production.</p> </div> <div class="flex gap-10"> <div> <div class="text-gray-300 font-semibold mb-2">Company</div> <ul class="space-y-1 text-gray-400"> <li><a class="hover:text-white transition" href="/about">About</a></li> <li><a class="hover:text-white transition" href="/careers">Careers</a></li> <li><a class="hover:text-white transition" href="/contact">Contact</a></li> </ul> </div> <div> <div class="text-gray-300 font-semibold mb-2">Work</div> <ul class="space-y-1 text-gray-400"> <li><a class="hover:text-white transition" href="/services">Services</a></li> <li><a class="hover:text-white transition" href="/industries">Industries</a></li> <li><a class="hover:text-white transition" href="/demo">Demo</a></li> </ul> </div> </div> <div> <h3 class="text-white font-semibold text-lg">Contact Info</h3> <ul class="mt-3 space-y-2 text-gray-400"> <li class="flex items-start gap-3"> <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sky-400 mt-0.5"> <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-.47-.47V19.5A2.25 2.25 0 0 1 16.25 21h-1.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v4.5a.75.75 0 0 1-.75.75h-1.5A2.25 2.25 0 0 1 4.5 19.5v-7.569l-.47.47a.75.75 0 1 1-1.06-1.06l7.5-7.5z"></path> </svg> <div> <div>2323 S Voss Rd, Ste 367</div> <div>Houston, TX - 77057</div> </div> </li> <li class="flex items-center gap-3"> <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sky-400"> <path d="M2.25 6.75C2.25 5.231 3.481 4 5 4h2.153c.597 0 1.14.334 1.405.867l1.21 2.42a2.25 2.25 0 0 1-.566 2.695l-1.05.875a.75.75 0 0 0-.224.84 8.002 8.002 0 0 0 4.268 4.268.75.75 0 0 0 .84-.224l.875-1.05a2.25 2.25 0 0 1 2.695-.566l2.42 1.21c.533.266.867.808.867 1.405V19c0 1.519-1.231 2.75-2.75 2.75h-.5C9.093 21.75 2.25 14.907 2.25 6.75v0z"></path> </svg> <a href="tel:3463330005" class="hover:text-white transition">3463330005</a> </li> <li class="flex items-center gap-3"> <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sky-400"> <path d="M1.5 8.67v6.58A2.25 2.25 0 0 0 3.75 17.5h16.5A2.25 2.25 0 0 0 22.5 15.25V8.67l-8.752 4.816a2.25 2.25 0 0 1-2.496 0L1.5 8.67z"></path> <path d="M22.5 6.75v-.375A2.25 2.25 0 0 0 20.25 4.125H3.75A2.25 2.25 0 0 0 1.5 6.375v.375l9.248 5.088a.75.75 0 0 0 .752 0L22.5 6.75z"></path> </svg> <a href="mailto:support@techai.ai" class="hover:text-white transition">support@techai.ai</a> </li> </ul> </div> <div class="md:text-right text-gray-400"> <div>© 2025 TechAI Inc.</div> <div class="mt-1">All rights reserved.</div> </div> <span id="navHoverIndicator" class="nav-hover-indicator"></span> </div> </footer> </main> <!-- Back to Top Button --> <button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-[0_8px_30px_rgba(37,99,235,0.5)] flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none" type="button"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"> <path fill-rule="evenodd" d="M12 4.5a.75.75 0 0 1 .53.22l6 6a.75.75 0 1 1-1.06 1.06L12.75 6.56V19.5a.75.75 0 0 1-1.5 0V6.56l-4.72 5.22a.75.75 0 1 1-1.06-1.06l6-6A.75.75 0 0 1 12 4.5z" clip-rule="evenodd"></path> </svg> </button> <script>
+      (function () {
+        const btn = document.getElementById('backToTop');
+        if (!btn) return;
+        const toggle = () => {
+          if (window.scrollY > 200) {
+            btn.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            btn.classList.add('opacity-0', 'pointer-events-none');
+          }
+        };
+        window.addEventListener('scroll', toggle, { passive: true });
+        toggle();
+        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      })();
+    </script> <script>
+      // Stable hover + drop animation for desktop dropdowns
+      (function(){
+        function stableHover(wrapId, panelId){
+          const wrap = document.getElementById(wrapId);
+          const panel = document.getElementById(panelId);
+          if (!wrap || !panel) return;
+          let hideTimer = null;
+          const show = () => {
+            if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+            panel.classList.remove('opacity-0','-translate-y-1','scale-95','pointer-events-none');
+            panel.classList.add('opacity-100','translate-y-0','scale-100','pointer-events-auto');
+          };
+          const hide = () => {
+            panel.classList.remove('opacity-100','translate-y-0','scale-100','pointer-events-auto');
+            panel.classList.add('opacity-0','-translate-y-1','scale-95','pointer-events-none');
+          };
+          const scheduleHide = () => { hideTimer = setTimeout(hide, 120); };
+          wrap.addEventListener('mouseenter', show);
+          wrap.addEventListener('mouseleave', (e) => {
+            const to = e.relatedTarget;
+            if (to && panel.contains(to)) return; // entering panel, keep open
+            scheduleHide();
+          });
+          panel.addEventListener('mouseenter', show);
+          panel.addEventListener('mouseleave', (e) => {
+            const to = e.relatedTarget;
+            if (to && (wrap.contains(to))) return; // back to trigger area
+            scheduleHide();
+          });
+        }
+        stableHover('servicesGroup', 'servicesDropdown');
+        stableHover('industriesGroup', 'industriesDropdown');
+      })();
+    </script> <script>
+      // Sliding underline between main nav items on hover
+      (function(){
+        const container = document.getElementById('mainNav');
+        const indicator = document.getElementById('navHoverIndicator');
+        if (!container || !indicator) return;
+        const links = Array.from(container.querySelectorAll('a.nav-link'));
+        let hideTimer = null;
+
+        function moveTo(el){
+          const c = container.getBoundingClientRect();
+          const r = el.getBoundingClientRect();
+          const x = r.left - c.left;
+          indicator.style.width = r.width + 'px';
+          indicator.style.transform = `translateX(${x}px)`;
+          indicator.style.opacity = '1';
+        }
+        function hide(){ indicator.style.opacity = '0'; }
+
+        links.forEach((a) => {
+          a.addEventListener('mouseenter', () => {
+            if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+            moveTo(a);
+          });
+        });
+        container.addEventListener('mouseleave', () => { hideTimer = setTimeout(hide, 120); });
+      })();
+    </script> <script>
+      // Lightweight SPA-style navigation (PJAX)
+      (function () {
+        const container = document.getElementById('app');
+        if (!container) return;
+
+        function isModKey(e){ return e.metaKey || e.ctrlKey || e.shiftKey || e.altKey; }
+
+        function updateActiveNav(){
+          const path = location.pathname.replace(/\/$/, '') || '/';
+          document.querySelectorAll('nav a[href]').forEach((a) => {
+            if (a.hasAttribute('data-no-active-style')) {
+              a.classList.toggle('nav-link-active', false);
+              a.removeAttribute('aria-current');
+              return;
+            }
+            const url = new URL(a.href, location.href);
+            const hrefPath = url.pathname.replace(/\/$/, '') || '/';
+            const active = hrefPath === path;
+            a.classList.toggle('nav-link-active', active);
+            if (active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+          });
+        }
+
+        function runScripts(scope){
+          const scripts = Array.from(scope.querySelectorAll('script'));
+          scripts.forEach((old) => {
+            const s = document.createElement('script');
+            // copy attributes (e.g., type="module")
+            for (const attr of old.attributes) s.setAttribute(attr.name, attr.value);
+            s.textContent = old.textContent || '';
+            // execute by appending to body, then remove
+            document.body.appendChild(s);
+            s.parentNode && s.parentNode.removeChild(s);
+          });
+        }
+
+        async function navigate(url, replace){
+          try {
+            container.style.opacity = '0';
+            const res = await fetch(url, { headers: { 'X-Requested-With': 'spa' } });
+            if (!res.ok) throw new Error('HTTP '+res.status);
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const next = doc.getElementById('app');
+            if (!next) { location.href = url; return; }
+            document.title = doc.title || document.title;
+            container.innerHTML = next.innerHTML;
+            runScripts(container);
+            if (replace) history.replaceState({}, '', url); else history.pushState({}, '', url);
+            updateActiveNav();
+            // hash-aware scroll after navigation
+            try {
+              const u = new URL(url, location.href);
+              if (u.hash) {
+                const id = u.hash.slice(1);
+                const target = document.getElementById(id);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                else window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            } catch (_) {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          } catch (err) {
+            // Fallback to hard navigation on error
+            location.href = url;
+            return;
+          } finally {
+            // allow paint next frame
+            requestAnimationFrame(() => { container.style.opacity = '1'; });
+          }
+        }
+
+        document.addEventListener('click', (e) => {
+          const a = e.target instanceof Element ? e.target.closest('a') : null;
+          if (!a) return;
+          const href = a.getAttribute('href');
+          if (!href || a.target === '_blank' || a.hasAttribute('download') || a.hasAttribute('data-no-spa')) return;
+          if (isModKey(e)) return; // let browser handle new tabs/windows
+          if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+          const url = new URL(a.href, location.href);
+          if (url.origin !== location.origin) return;
+          // Same-page link should just scroll
+          if (url.pathname === location.pathname && url.hash) return;
+          e.preventDefault();
+          navigate(url.href, false);
+          // close mobile menu if open
+          const mm = document.getElementById('mobileMenu');
+          if (mm) mm.classList.add('hidden');
+          const btn = document.getElementById('mobileMenuBtn');
+          if (btn) btn.setAttribute('aria-expanded','false');
+        });
+
+        window.addEventListener('popstate', () => navigate(location.href, true));
+
+        // initial highlight
+        updateActiveNav();
+      })();
+    </script> <script>
+      // Debug layout toggle + size badges: Alt+D or ?debug=1
+      (function(){
+        try {
+          const SELECTOR = 'div, section, article, header, footer, main, nav, aside, ul, li';
+          const state = { observers: new Map(), enabled: false };
+
+          function makeBadge(el){
+            const existing = el.querySelector(':scope > .dbg-badge');
+            if (existing) return existing;
+            const b = document.createElement('span');
+            b.className = 'dbg-badge';
+            el.appendChild(b);
+            return b;
+          }
+
+          function update(el){
+            const rect = el.getBoundingClientRect();
+            const b = makeBadge(el);
+            b.textContent = Math.round(rect.width) + '×' + Math.round(rect.height);
+          }
+
+          function onResize(){
+            document.querySelectorAll(SELECTOR).forEach((el) => update(el));
+          }
+
+          function enable(){
+            if (state.enabled) return;
+            state.enabled = true;
+            document.body.classList.add('debug-boxes');
+            document.querySelectorAll(SELECTOR).forEach((el) => {
+              if (!(el instanceof HTMLElement)) return;
+              update(el);
+              const ro = new ResizeObserver(() => update(el));
+              ro.observe(el);
+              state.observers.set(el, ro);
+            });
+            window.addEventListener('resize', onResize);
+          }
+
+          function disable(){
+            if (!state.enabled) return;
+            state.enabled = false;
+            document.body.classList.remove('debug-boxes');
+            state.observers.forEach((ro) => ro.disconnect());
+            state.observers.clear();
+            document.querySelectorAll('.dbg-badge').forEach((b) => b.remove());
+            window.removeEventListener('resize', onResize);
+          }
+
+          function setEnabled(v){ v ? enable() : disable(); }
+
+          const initial = /[?&]debug=1\b/.test(location.search);
+          if (initial) enable();
+
+          window.addEventListener('keydown', (e) => {
+            if (e.altKey && (e.key === 'd' || e.key === 'D')) {
+              e.preventDefault();
+              setEnabled(!state.enabled);
+            }
+          }, { passive: false });
+
+          window.__DBG_LAYOUT__ = { enable, disable, setEnabled };
+        } catch (_) {}
+      })();
+  </script> <script>
+      // Mobile menu + Services accordion
+      (function(){
+        const btn = document.getElementById('mobileMenuBtn');
+        const close = document.getElementById('mobileMenuClose');
+        const menu = document.getElementById('mobileMenu');
+        const toggle = document.getElementById('mobileServicesToggle');
+        const sub = document.getElementById('mobileServicesSub');
+        const indToggle = document.getElementById('mobileIndustriesToggle');
+        const indSub = document.getElementById('mobileIndustriesSub');
+        function open(){ if(menu){ menu.classList.remove('hidden'); } if(btn){ btn.setAttribute('aria-expanded','true'); } }
+        function hide(){ if(menu){ menu.classList.add('hidden'); } if(btn){ btn.setAttribute('aria-expanded','false'); } }
+        btn && btn.addEventListener('click', open);
+        close && close.addEventListener('click', hide);
+        toggle && toggle.addEventListener('click', function(){ if(!sub) return; sub.classList.toggle('hidden'); });
+        indToggle && indToggle.addEventListener('click', function(){ if(!indSub) return; indSub.classList.toggle('hidden'); });
+      })();
+    </script> </body> </html>
