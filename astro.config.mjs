@@ -5,6 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+
+  output: "static",
+
   vite: {
     plugins: [tailwindcss()],
     envPrefix: "SMTP_" // allow Astro to read SMTP_ variables
