@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="AI Demo | TechAI Inc">
+  <!-- global background removed; no-op -->
+
+  <section class="py-24 px-6 md:px-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-cyan-700/20 via-emerald-700/15 to-black/25 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.35)]">Text-to-SQL <span class="text-cyan-400">Demo</span></h1>
+      <p class="text-gray-300 text-lg">Try a lightweight preview of our natural-language to SQL experience.</p>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20">
+    <div class="max-w-6xl mx-auto bg-transparent border border-cyan-900/40 rounded-2xl p-8 shadow-[0_0_25px_rgba(6,182,212,0.25)]">
+      <h2 class="text-2xl font-bold text-white mb-4">Preview</h2>
+
+      <div class="mb-6">
+        <div class="bg-transparent border border-cyan-900/40 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-white font-semibold">History</h3>
+            <button id="clear-saved" class="text-xs text-cyan-200 hover:underline">Clear</button>
+          </div>
+          <div id="saved-list" class="space-y-2 max-h-[20rem] overflow-y-auto">
+            <p class="text-gray-400 text-sm">No saved queries yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div>
+          <label for="nlq" class="block text-gray-300 mb-2 font-medium">Your question</label>
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-wrap gap-2">
+              <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="total revenue by month for 2024">Revenue by month</button>
+              <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="count orders last 30 days">Orders last 30 days</button>
+              <button class="sample-chip px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-200 border border-cyan-800/50 hover:bg-cyan-800/40 transition" data-sample="average sales by week for 2023">Avg sales by week</button>
+            </div>
+            <textarea id="nlq" rows="6" placeholder="e.g., total revenue by month for 2024" class="w-full px-4 py-3 rounded-md bg-[#0c1520] border border-cyan-900/40 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-700 outline-none text-white placeholder-gray-400 transition resize-none"></textarea>
+            <div class="flex items-center gap-3">
+              <button id="gen" class="btn-glow btn-glow-sm">Generate</button>
+              <button id="save" class="px-3 py-1.5 rounded-md border border-cyan-900/40 text-gray-200 hover:bg-cyan-900/30">Save</button>
+              <p class="text-xs text-gray-400">Client-only mock — no network requests.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="space-y-4">
+            <div>
+              <label for="answer" class="block text-gray-300 mb-2 font-medium">Response</label>
+              <textarea id="answer" rows="12" readonly class="w-full px-4 py-3 rounded-md bg-[#081018] border border-cyan-900/40 text-gray-200 resize-none"></textarea>
+            </div>
+            <div>
+              <button id="toggle-sql" class="px-3 py-1.5 rounded-md border border-cyan-900/40 text-gray-200 hover:bg-cyan-900/30">Show SQL</button>
+            </div>
+            <div id="sql-container" class="hidden">
+              <label for="sql" class="block text-gray-300 mb-2 font-medium">Generated SQL</label>
+              <textarea id="sql" rows="12" readonly class="w-full px-4 py-3 rounded-md bg-[#081018] border border-cyan-900/40 text-gray-200 resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function(){
+      const btn = document.getElementById('gen');
+      if (!btn) return;
+      const nlq = document.getElementById('nlq');
+      const sql = document.getElementById('sql');
+
+      function normalize(s){ return (s || '').toLowerCase(); }
+      function contains(s, arr){ s = normalize(s); return arr.some(k => s.includes(k)); }
+
+      function generateMockSql(question){
+        const q = question.trim();
+        if (!q) return { sql: '/* enter a question above */', meta: { table: '', metricAlias: '', timeAlias: '' } };
+
+        const nq = normalize(q);
+        let table = '`demo.transactions`';
+        let metricExpr = 'SUM(amount)';
+        let metricAlias = 'total_revenue';
+
+        if (contains(nq, ['order','orders'])) {
+          table = '`demo.orders`';
+          metricExpr = contains(nq, ['avg','average']) ? 'AVG(total_amount)' : contains(nq, ['sum','revenue','sales']) ? 'SUM(total_amount)' : 'COUNT(*)';
+          metricAlias = metricExpr.startsWith('COUNT') ? 'order_count' : 'total_sales';
+        } else if (contains(nq, ['user','customer'])) {
+          table = '`demo.users`';
+          metricExpr = 'COUNT(*)';
+          metricAlias = 'user_count';
+        } else if (contains(nq, ['revenue','sales'])) {
+          table = '`demo.transactions`';
+          metricExpr = contains(nq, ['avg','average']) ? 'AVG(amount)' : 'SUM(amount)';
+          metricAlias = metricExpr.startsWith('AVG') ? 'avg_revenue' : 'total_revenue';
+        }
+
+        let timeExpr = 'DATE(created_at)';
+        let timeAlias = 'day';
+        if (contains(nq, ['month'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), MONTH)'; timeAlias = 'month'; }
+        else if (contains(nq, ['year'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), YEAR)'; timeAlias = 'year'; }
+        else if (contains(nq, ['week'])) { timeExpr = 'DATE_TRUNC(DATE(created_at), WEEK)'; timeAlias = 'week'; }
+
+        const whereParts = [];
+        const yearMatch = nq.match(/20\d{2}/);
+        if (yearMatch) whereParts.push(`EXTRACT(YEAR FROM DATE(created_at)) = ${yearMatch[0]}`);
+        if (contains(nq, ['last 30 days','past 30 days'])) whereParts.push('DATE(created_at) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)');
+        if (contains(nq, ['last 7 days','past 7 days'])) whereParts.push('DATE(created_at) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)');
+
+        const whereClause = whereParts.length ? `\nWHERE ${whereParts.join(' AND ')}` : '';
+        const groupOrder = `\nGROUP BY ${timeAlias}\nORDER BY ${timeAlias}`;
+        const sql = `/* demo: intent -> ${q.replace(/\*\//g,'*\/')} */\n\nSELECT\n  ${timeExpr} AS ${timeAlias},\n  ${metricExpr} AS ${metricAlias}\nFROM ${table}${whereClause}${groupOrder};`;
+        return { sql, meta: { table, metricExpr, metricAlias, timeExpr, timeAlias, where: whereClause } };
+      }
+
+      function seededRand(seed){ let x = Math.imul(9301, seed) + 49297; return () => { x = (Math.imul(x,1103515245)+12345) & 0x7fffffff; return (x % 10000) / 10000; }; }
+      function generateMockAnswer(question, meta){
+        const seed = Array.from(question).reduce((a,c)=>a + c.charCodeAt(0), 0) || 1;
+        const rand = seededRand(seed);
+        const grain = meta.timeAlias || 'period';
+        const metric = meta.metricAlias || 'value';
+        const buckets = grain === 'month' ? 6 : grain === 'week' ? 4 : grain === 'year' ? 3 : 7;
+        const samples = Array.from({length: buckets}, (_,i)=> Math.round((rand()*0.6+0.2)*1000)*10);
+        const total = samples.reduce((a,b)=>a+b,0);
+        const label = grain.charAt(0).toUpperCase()+grain.slice(1);
+        const example = samples.slice(0, Math.min(3, samples.length)).map((v,i)=>`${label} ${i+1}: ${v.toLocaleString()}`).join(', ');
+        return `Estimated ${metric.replace(/_/g,' ')} by ${grain}: ${example}.\nApproximate total: ${total.toLocaleString()}.\n(Note: simulated demo answer based on your question and generated SQL.)`;
+      }
+
+      function generate(){
+        const q = (nlq.value || '').trim();
+        const result = generateMockSql(q);
+        sql.value = result.sql;
+        const ans = document.getElementById('answer');
+        if (ans) ans.value = generateMockAnswer(q, result.meta);
+        const sqlWrap = document.getElementById('sql-container');
+        const toggle = document.getElementById('toggle-sql');
+        if (sqlWrap) sqlWrap.classList.add('hidden');
+        if (toggle) toggle.textContent = 'Show SQL';
+      }
+
+      btn.addEventListener('click', generate);
+      document.querySelectorAll('.sample-chip').forEach(el => el.addEventListener('click', () => { const s = el.getAttribute('data-sample') || ''; nlq.value = s; generate(); }));
+
+      // SQL toggle
+      (function(){
+        const sqlWrap = document.getElementById('sql-container');
+        const toggle = document.getElementById('toggle-sql');
+        function setLabel(){ if (toggle && sqlWrap) toggle.textContent = sqlWrap.classList.contains('hidden') ? 'Show SQL' : 'Hide SQL'; }
+        toggle && toggle.addEventListener('click', () => { if (!sqlWrap) return; sqlWrap.classList.toggle('hidden'); setLabel(); });
+        setLabel();
+      })();
+
+      // Saved queries sidebar
+      const saveBtn = document.getElementById('save');
+      const savedList = document.getElementById('saved-list');
+      const clearSaved = document.getElementById('clear-saved');
+      function getSaved(){ try { return JSON.parse(localStorage.getItem('demoSavedQueries') || '[]'); } catch { return []; } }
+      function setSaved(list){ localStorage.setItem('demoSavedQueries', JSON.stringify(list)); }
+      function renderSaved(){ const list = getSaved(); if (!savedList) return; if (!list.length){ savedList.innerHTML = '<p class="text-gray-400 text-sm">No saved queries yet.</p>'; return; } savedList.innerHTML = list.map(item => `
+          <div class="group border border-cyan-900/40 rounded-md p-3 bg-[#0c1520] hover:bg-[#102030] transition" data-id="${item.id}">
+            <div class="flex items-center justify-between">
+              <button class="text-left text-gray-200 hover:text-white truncate" data-action="load" title="${item.question}">${item.question}</button>
+              <button class="text-xs text-gray-400 hover:text-red-300" data-action="delete">Delete</button>
+            </div>
+            <div class="text-[11px] text-gray-500 mt-1">${new Date(item.ts).toLocaleString()}</div>
+          </div>`).join(''); }
+      function saveCurrent(){ const q = (nlq.value || '').trim(); if (!q || !sql.value) return; const list = getSaved(); const id = Date.now().toString(36)+Math.random().toString(36).slice(2,6); const entry = { id, question: q, sql: sql.value, answer: (document.getElementById('answer')||{}).value || '', meta: {}, ts: Date.now() }; list.unshift(entry); setSaved(list.slice(0,50)); renderSaved(); }
+      function loadSaved(id){ const list = getSaved(); const item = list.find(x => x.id === id); if (!item) return; nlq.value = item.question; sql.value = item.sql; const ans = document.getElementById('answer'); if (ans) ans.value = item.answer || ''; }
+      savedList && savedList.addEventListener('click', (e) => { const target = e.target; if (!(target instanceof Element)) return; const wrap = target.closest('[data-id]'); const id = wrap && wrap.getAttribute('data-id'); if (!id) return; const action = target.getAttribute('data-action'); if (action === 'delete'){ const list = getSaved().filter(x => x.id !== id); setSaved(list); renderSaved(); } else { loadSaved(id); } });
+      saveBtn && saveBtn.addEventListener('click', saveCurrent);
+      clearSaved && clearSaved.addEventListener('click', () => { setSaved([]); renderSaved(); });
+      renderSaved();
+    })();
+  </script>
+
+</BaseLayout>

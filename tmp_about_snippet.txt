@@ -1,0 +1,11 @@
+        About <span class="text-blue-400">TechAI Inc</span>
+      </h1>
+      <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+        TechAI Inc is a next-generation AI company empowering businesses to unlock the power of
+        Artificial Intelligence and Machine Learning. Our mission is to bridge the gap between
+        human insight and intelligent automation — helping enterprises accelerate innovation,
+        optimize operations, and make smarter decisions.
+      </p>
+    </div>
+  </section>
+

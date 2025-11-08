@@ -1,0 +1,310 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Industries | TechAI Inc">
+  <section class="py-6 px-6 md:px-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-violet-900/10 to-black/30 blur-3xl"></div>
+    
+  </section>
+
+  <section class="pt-6 pb-16 px-6 md:px-20 text-left">
+    <!--
+    <h2 class="text-3xl font-bold text-white mb-10 text-center drop-shadow-[0_0_20px_rgba(124,58,237,0.35)]">🧭 Industries We Serve</h2>
+
+    -->
+    <h2 class="text-3xl font-bold text-white mb-10 text-center drop-shadow-[0_0_20px_rgba(124,58,237,0.35)]">🧭 Industries We Serve</h2>
+    <div class="services-grid max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article id="finance-insurance" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">💰 Finance & Insurance</h3>
+        <p class="text-gray-300 mt-1">AI that builds financial intelligence. We empower financial organizations with predictive analytics and automation for fraud detection, credit scoring, risk modeling, and claims processing — improving speed, transparency, and compliance.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Fraud & anomaly detection</li>
+          <li>Credit scoring models</li>
+          <li>Customer segmentation</li>
+          <li>Claims and underwriting automation</li>
+          <li>Conversational AI for support</li>
+        </ul>
+      </article>
+
+      <article id="healthcare-life-sciences" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">❤️ Healthcare & Life Sciences</h3>
+        <p class="text-gray-300 mt-1">AI that transforms patient care. Our machine learning models enable faster diagnosis, drug discovery, and clinical analytics while preserving data privacy and HIPAA compliance.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Medical image analysis</li>
+          <li>Predictive diagnostics</li>
+          <li>Drug discovery acceleration</li>
+          <li>Clinical trial optimization</li>
+          <li>Health chatbot assistants</li>
+        </ul>
+      </article>
+
+      <article id="travel-transportation" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">✈️ Travel & Transportation</h3>
+        <p class="text-gray-300 mt-1">Smarter journeys powered by AI. We optimize travel operations through real-time insights, demand forecasting, and customer-facing AI agents that streamline bookings and support.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Route & timing optimization</li>
+          <li>Predictive maintenance for fleets</li>
+          <li>AI-powered dynamic pricing</li>
+          <li>Multi-channel chatbots for travelers</li>
+          <li>Demand & capacity forecasting</li>
+        </ul>
+      </article>
+
+      <article id="logistics-moving" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🚚 Logistics & Moving</h3>
+        <p class="text-gray-300 mt-1">Intelligent automation for logistics. We enable logistics and moving companies to improve efficiency through predictive analytics and AI-driven scheduling.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Predictive maintenance</li>
+          <li>AI quoting & scheduling systems</li>
+          <li>Fleet route optimization</li>
+          <li>Labor & driver allocation</li>
+          <li>Automated customer updates</li>
+        </ul>
+      </article>
+
+      <article id="manufacturing-energy" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🏭 Manufacturing & Energy</h3>
+        <p class="text-gray-300 mt-1">Smarter operations with predictive AI. We bring machine intelligence to factory and energy workflows — reducing downtime, optimizing resources, and ensuring safety.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Predictive maintenance</li>
+          <li>Anomaly & defect detection</li>
+          <li>Process optimization</li>
+          <li>Energy consumption forecasting</li>
+          <li>Quality inspection with vision AI</li>
+        </ul>
+      </article>
+
+      <article id="retail-ecommerce" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🛍️ Retail & E-Commerce</h3>
+        <p class="text-gray-300 mt-1">Personalization that drives growth. AI models that predict demand, personalize experiences, and increase revenue through customer insights and automation.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Product recommendations</li>
+          <li>Sentiment analysis</li>
+          <li>Inventory & price optimization</li>
+          <li>Chatbots for customer service</li>
+          <li>Marketing personalization</li>
+        </ul>
+      </article>
+
+      <article id="realestate-construction" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🏗️ Real Estate & Construction</h3>
+        <p class="text-gray-300 mt-1">Build, plan, and invest smarter. AI transforms real estate and construction through predictive insights, document automation, and cost optimization.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Property valuation & forecasting</li>
+          <li>Construction cost analytics</li>
+          <li>Project scheduling optimization</li>
+          <li>Document intelligence for contracts</li>
+        </ul>
+      </article>
+
+      <article id="technology-saas" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">💻 Technology & SaaS</h3>
+        <p class="text-gray-300 mt-1">Integrating AI into every product. We help SaaS and tech firms embed AI capabilities — from NLP and automation to analytics and decision support.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>AI copilots & assistants</li>
+          <li>Natural language search</li>
+          <li>Anomaly detection</li>
+          <li>Workflow automation</li>
+          <li>Custom GenAI integration</li>
+        </ul>
+      </article>
+
+      <article id="public-sector-education" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🏛️ Public Sector & Education</h3>
+        <p class="text-gray-300 mt-1">Empowering institutions with AI. AI improves decision-making, transparency, and engagement in governance and education.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Policy & impact analytics</li>
+          <li>Citizen service chatbots</li>
+          <li>Learning personalization engines</li>
+          <li>Infrastructure planning optimization</li>
+        </ul>
+      </article>
+
+      <article id="agriculture-environment" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">🌿 Agriculture & Environment</h3>
+        <p class="text-gray-300 mt-1">Sustainability through intelligence. We use AI and data analytics to drive sustainability and productivity in agriculture and environmental management.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Crop yield forecasting</li>
+          <li>Soil & irrigation monitoring</li>
+          <li>Climate impact modeling</li>
+          <li>Supply chain optimization</li>
+        </ul>
+      </article>
+
+      <article id="telecom-media" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">📡 Telecom & Media</h3>
+        <p class="text-gray-300 mt-1">Next-generation connectivity powered by AI. AI enhances operations, personalization, and reliability for telecom and media enterprises.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Churn prediction</li>
+          <li>Network optimization</li>
+          <li>Smart customer segmentation</li>
+          <li>Content personalization</li>
+          <li>AI customer support</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">Explore a Pilot</h2>
+      <p class="text-gray-300 mb-8">Kick off a scoped engagement to validate impact and production readiness.</p>
+      <a href="/contact" class="btn-glow inline-block">Contact Us</a>
+    </div>
+  </section>
+
+</BaseLayout>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Industries | TechAI Inc">
+  <section class="py-6 px-6 md:px-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-violet-900/10 to-black/30 blur-3xl"></div>
+  </section>
+
+  <section class="pt-6 pb-16 px-6 md:px-20 text-left">
+    <h2 class="text-3xl font-bold text-white mb-10 text-center drop-shadow-[0_0_20px_rgba(124,58,237,0.35)]">🧭 Industries We Serve</h2>
+
+    <div class="services-grid max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article id="finance-insurance" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Finance & Insurance</h3>
+        <p class="text-gray-300 mt-1">AI that builds financial intelligence. We empower financial organizations with predictive analytics and automation for fraud detection, credit scoring, risk modeling, and claims processing — improving speed, transparency, and compliance.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Fraud & anomaly detection</li>
+          <li>Credit scoring models</li>
+          <li>Customer segmentation</li>
+          <li>Claims and underwriting automation</li>
+          <li>Conversational AI for support</li>
+        </ul>
+      </article>
+
+      <article id="healthcare-life-sciences" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Healthcare & Life Sciences</h3>
+        <p class="text-gray-300 mt-1">AI that transforms patient care. Our machine learning models enable faster diagnosis, drug discovery, and clinical analytics while preserving data privacy and HIPAA compliance.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Medical image analysis</li>
+          <li>Predictive diagnostics</li>
+          <li>Drug discovery acceleration</li>
+          <li>Clinical trial optimization</li>
+          <li>Health chatbot assistants</li>
+        </ul>
+      </article>
+
+      <article id="travel-transportation" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Travel & Transportation</h3>
+        <p class="text-gray-300 mt-1">Smarter journeys powered by AI. We optimize travel operations through real-time insights, demand forecasting, and customer-facing AI agents that streamline bookings and support.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Route & timing optimization</li>
+          <li>Predictive maintenance for fleets</li>
+          <li>AI-powered dynamic pricing</li>
+          <li>Multi-channel chatbots for travelers</li>
+          <li>Demand & capacity forecasting</li>
+        </ul>
+      </article>
+
+      <article id="logistics-moving" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Logistics & Moving</h3>
+        <p class="text-gray-300 mt-1">Intelligent automation for logistics. We enable logistics and moving companies to improve efficiency through predictive analytics and AI-driven scheduling.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Predictive maintenance</li>
+          <li>AI quoting & scheduling systems</li>
+          <li>Fleet route optimization</li>
+          <li>Labor & driver allocation</li>
+          <li>Automated customer updates</li>
+        </ul>
+      </article>
+
+      <article id="manufacturing-energy" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Manufacturing & Energy</h3>
+        <p class="text-gray-300 mt-1">Smarter operations with predictive AI. We bring machine intelligence to factory and energy workflows — reducing downtime, optimizing resources, and ensuring safety.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Predictive maintenance</li>
+          <li>Anomaly & defect detection</li>
+          <li>Process optimization</li>
+          <li>Energy consumption forecasting</li>
+          <li>Quality inspection with vision AI</li>
+        </ul>
+      </article>
+
+      <article id="retail-ecommerce" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Retail & E‑Commerce</h3>
+        <p class="text-gray-300 mt-1">Personalization that drives growth. AI models that predict demand, personalize experiences, and increase revenue through customer insights and automation.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Product recommendations</li>
+          <li>Sentiment analysis</li>
+          <li>Inventory & price optimization</li>
+          <li>Chatbots for customer service</li>
+          <li>Marketing personalization</li>
+        </ul>
+      </article>
+
+      <article id="realestate-construction" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Real Estate & Construction</h3>
+        <p class="text-gray-300 mt-1">Build, plan, and invest smarter. AI transforms real estate and construction through predictive insights, document automation, and cost optimization.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Property valuation & forecasting</li>
+          <li>Construction cost analytics</li>
+          <li>Project scheduling optimization</li>
+          <li>Document intelligence for contracts</li>
+        </ul>
+      </article>
+
+      <article id="technology-saas" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Technology & SaaS</h3>
+        <p class="text-gray-300 mt-1">Integrating AI into every product. We help SaaS and tech firms embed AI capabilities — from NLP and automation to analytics and decision support.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>AI copilots & assistants</li>
+          <li>Natural language search</li>
+          <li>Anomaly detection</li>
+          <li>Workflow automation</li>
+          <li>Custom GenAI integration</li>
+        </ul>
+      </article>
+
+      <article id="public-sector-education" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Public Sector & Education</h3>
+        <p class="text-gray-300 mt-1">Empowering institutions with AI. AI improves decision-making, transparency, and engagement in governance and education.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Policy & impact analytics</li>
+          <li>Citizen service chatbots</li>
+          <li>Learning personalization engines</li>
+          <li>Infrastructure planning optimization</li>
+        </ul>
+      </article>
+
+      <article id="agriculture-environment" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Agriculture & Environment</h3>
+        <p class="text-gray-300 mt-1">Sustainability through intelligence. We use AI and data analytics to drive sustainability and productivity in agriculture and environmental management.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Crop yield forecasting</li>
+          <li>Soil & irrigation monitoring</li>
+          <li>Climate impact modeling</li>
+          <li>Supply chain optimization</li>
+        </ul>
+      </article>
+
+      <article id="telecom-media" class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-2xl font-semibold text-white">Telecom & Media</h3>
+        <p class="text-gray-300 mt-1">Next-generation connectivity powered by AI. AI enhances operations, personalization, and reliability for telecom and media enterprises.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-3 space-y-1">
+          <li>Churn prediction</li>
+          <li>Network optimization</li>
+          <li>Smart customer segmentation</li>
+          <li>Content personalization</li>
+          <li>AI customer support</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">Explore a Pilot</h2>
+      <p class="text-gray-300 mb-8">Kick off a scoped engagement to validate impact and production readiness.</p>
+      <a href="/contact" class="btn-glow inline-block">Contact Us</a>
+    </div>
+  </section>
+
+</BaseLayout>

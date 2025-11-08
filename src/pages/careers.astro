@@ -1,0 +1,221 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ApplyForm from "../components/ApplyForm.astro";
+---
+
+<BaseLayout title="Careers | TechAI Inc">
+  <section class="py-6 px-6 md:px-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-violet-900/10 to-black/30 blur-3xl"></div>
+
+    <!--
+    <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+        Join <span class="text-blue-400">TechAI</span>
+      </h1>
+      <p class="text-gray-300 text-lg">
+        Help us build intelligent, human‑centered AI. We’re a curious, collaborative
+        team shipping impactful products with a focus on responsibility and craft.
+      </p>
+    </div>
+    -->
+  </section>
+
+  
+
+  <script>
+  (function prefillJobFromQueryOnCareers(){
+    try {
+      const params = new URLSearchParams(location.search);
+      const job = params.get('job');
+      if (job) {
+        const input = document.getElementById('cb-job');
+        if (input) input.value = job;
+      }
+    } catch {}
+  })();
+
+  async function handleCareersSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const fd = new FormData(form);
+    const res = await fetch('/api/contact-multipart', { method: 'POST', body: fd });
+    const result = await res.json();
+    if (result.success) {
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      alert('Something went wrong. Please try again later.');
+    }
+  }
+  </script>
+
+  <section class="pt-6 pb-16 px-6 md:px-20 text-left">
+    <h2 id="open-positions" class="text-3xl font-bold text-white mb-10 text-center drop-shadow-[0_0_20px_rgba(124,58,237,0.35)]">🧑‍💻 Open Roles</h2>
+
+    <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Senior AI/ML Engineer</h3>
+        <p class="text-gray-300 mb-4">Design and ship production ML systems, from data to deployment. Experience with LLMs/RAG a plus.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Senior AI/ML Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Data Engineer</h3>
+        <p class="text-gray-300 mb-4">Own reliable data pipelines and MLOps foundations across cloud platforms.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Data Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Product Designer</h3>
+        <p class="text-gray-300 mb-4">Craft intuitive, accessible experiences for AI‑powered tools and workflows.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Product Designer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">MLOps Engineer</h3>
+        <p class="text-gray-300 mb-4">Build CI/CD for ML, automate training and deployment, and keep models reliable in production.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="MLOps Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Machine Learning Engineer</h3>
+        <p class="text-gray-300 mb-4">Train, evaluate, and ship ML models for real‑world use cases; experience with LLMs welcome.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Machine Learning Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Data Analyst</h3>
+        <p class="text-gray-300 mb-4">Transform data into insights with SQL, dashboards, and clear storytelling to guide decisions.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Data Analyst" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Artificial Intelligence (AI) Researcher</h3>
+        <p class="text-gray-300 mb-4">Explore novel approaches in GenAI, retrieval, and multimodal learning; translate research to impact.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Artificial Intelligence (AI) Researcher" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Natural Language Processing (NLP) Engineer</h3>
+        <p class="text-gray-300 mb-4">Build LLM‑powered features, evaluators, and retrieval pipelines for chat, search, and summarization.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Natural Language Processing (NLP) Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Data Scientist</h3>
+        <p class="text-gray-300 mb-4">Prototype models, run experiments, and quantify impact with robust evaluation and A/B testing.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Data Scientist" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">AI Solutions Architect</h3>
+        <p class="text-gray-300 mb-4">Design scalable, secure AI systems and guide customers from discovery to production readiness.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="AI Solutions Architect" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Deep Learning Engineer</h3>
+        <p class="text-gray-300 mb-4">Train and optimize deep neural networks for vision, speech, and other complex modalities.</p>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+          <span>Remote / Hybrid</span>
+          <span>•</span>
+          <span>Full‑time</span>
+        </div>
+        <a href="#careers-contact" data-job="Deep Learning Engineer" class="btn-glow btn-glow-sm inline-block apply-link">Apply</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact block duplicated from Contact page (placed after roles) -->
+  <section id="careers-contact" class="py-16 px-6 md:px-20 text-center relative overflow-hidden"> 
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-violet-900/10 to-black/30 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10"> 
+      <h2 class="text-3xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(37,99,235,0.3)]">Apply</h2>
+      <p class="text-gray-300 mb-10 text-lg">Share your details below. You can also attach a resume.</p>
+
+      <ApplyForm id="careersApply" idPrefix="cb" includeJob={true} includeResume={true} submitLabel="Submit" />
+    </div>
+  </section>
+
+  <script>
+  // Smooth scroll and prefill the Apply form when clicking role Apply buttons
+  document.addEventListener('click', function(e){
+    const el = (e.target as any).closest ? (e.target as any).closest('.apply-link') : null;
+    if (!el) return;
+    e.preventDefault();
+    var job = el.getAttribute('data-job') || '';
+    var input = document.getElementById('cb-job');
+    if (input) (input as any).value = job;
+    var section = document.getElementById('careers-contact');
+    if (section && (section as any).scrollIntoView) (section as any).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  </script>
+
+  <section class="py-16 px-6 md:px-20">
+    <div class="service-card max-w-5xl mx-auto bg-transparent border border-blue-900/40 rounded-2xl p-10 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+      <h2 class="text-2xl font-bold text-white mb-4">How We Work</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Remote‑friendly, async‑first collaboration</li>
+        <li>Fast iterations with strong engineering practices</li>
+        <li>Thoughtful product culture and responsible AI</li>
+        <li>Learning budget and conference support</li>
+      </ul>
+      <p class="text-gray-300 mt-6">Don’t see a perfect fit? We’d still love to hear from you. Send a note with your interests and work samples.</p>
+      <div class="mt-6">
+        <a href="mailto:careers@techai.example" class="btn-glow inline-block">Email Careers</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

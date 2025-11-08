@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Blog | TechAI Inc">
+  <section class="py-24 px-6 md:px-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-violet-900/10 to-black/30 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+        TechAI <span class="text-blue-400">Blog</span>
+      </h1>
+      <p class="text-gray-300 text-lg">
+        Ideas, guides, and updates on practical AI, product, and engineering.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20 text-left">
+    <h2 class="text-3xl font-bold text-white mb-10 text-center drop-shadow-[0_0_20px_rgba(124,58,237,0.35)]">Latest Posts</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <article class="bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Shipping Text‑to‑SQL Safely</h3>
+        <p class="text-gray-300 mb-4">How we validate intent, enforce governance, and evaluate accuracy in production NL→SQL systems.</p>
+        <div class="text-sm text-gray-400 mb-4">Mar 2025 • 6 min read</div>
+        <a href="#" class="btn-glow btn-glow-sm inline-block">Read More</a>
+      </article>
+
+      <article class="bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Measuring LLM Quality</h3>
+        <p class="text-gray-300 mb-4">A pragmatic approach to evals, from grounded QA to task success and user satisfaction.</p>
+        <div class="text-sm text-gray-400 mb-4">Feb 2025 • 7 min read</div>
+        <a href="#" class="btn-glow btn-glow-sm inline-block">Read More</a>
+      </article>
+
+      <article class="bg-transparent border border-blue-900/40 rounded-xl p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Agents in Production</h3>
+        <p class="text-gray-300 mb-4">What works, what breaks, and the infrastructure patterns that keep agents reliable.</p>
+        <div class="text-sm text-gray-400 mb-4">Jan 2025 • 8 min read</div>
+        <a href="#" class="btn-glow btn-glow-sm inline-block">Read More</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-gray-300 mb-6">Want updates? We can add a simple newsletter signup here.</p>
+      <a href="/contact" class="btn-glow inline-block">Contact the Team</a>
+    </div>
+  </section>
+
+</BaseLayout>

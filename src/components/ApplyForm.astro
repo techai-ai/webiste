@@ -1,0 +1,97 @@
+---
+interface Props {
+  id?: string;
+  idPrefix?: string; // used to build input IDs so external scripts can target reliably
+  includeJob?: boolean;
+  includeResume?: boolean;
+  submitLabel?: string;
+  prefillJobFromQuery?: boolean; // when true, reads ?job=
+}
+
+const {
+  id = 'applyForm-' + Math.random().toString(36).slice(2, 8),
+  idPrefix = 'f',
+  includeJob = true,
+  includeResume = true,
+  submitLabel = 'Submit',
+  prefillJobFromQuery = false,
+} = Astro.props as Props;
+---
+<form id={id} class="flex flex-col gap-6 text-left" enctype="multipart/form-data" onsubmit="return window.__applyFormSubmit && window.__applyFormSubmit(event)">
+  <div>
+    <label for={`${idPrefix}-name`} class="block text-gray-300 mb-2 font-medium">Full Name</label>
+    <input id={`${idPrefix}-name`} name="name" type="text" required class="w-full px-4 py-3 rounded-md bg-[#11122b] border border-blue-900/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-700 outline-none text-white placeholder-gray-400 transition" placeholder="John Doe" />
+  </div>
+
+  <div>
+    <label for={`${idPrefix}-email`} class="block text-gray-300 mb-2 font-medium">Email Address</label>
+    <input id={`${idPrefix}-email`} name="email" type="email" required class="w-full px-4 py-3 rounded-md bg-[#11122b] border border-blue-900/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-700 outline-none text-white placeholder-gray-400 transition" placeholder="you@company.com" />
+  </div>
+
+  {includeJob && (
+    <div>
+      <label for={`${idPrefix}-job`} class="block text-gray-300 mb-2 font-medium">Job Title (optional)</label>
+      <input id={`${idPrefix}-job`} name="job" type="text" class="w-full px-4 py-3 rounded-md bg-[#11122b] border border-blue-900/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-700 outline-none text-white placeholder-gray-400 transition" placeholder="e.g., Machine Learning Engineer" />
+    </div>
+  )}
+
+  <div>
+    <label for={`${idPrefix}-message`} class="block text-gray-300 mb-2 font-medium">Message</label>
+    <textarea id={`${idPrefix}-message`} name="message" rows="5" required class="w-full px-4 py-3 rounded-md bg-[#11122b] border border-blue-900/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-700 outline-none text-white placeholder-gray-400 transition resize-none" placeholder="Tell us about your interests..."></textarea>
+  </div>
+
+  {includeResume && (
+    <div>
+      <label for={`${idPrefix}-resume`} class="block text-gray-300 mb-2 font-medium">Resume (PDF/DOCX)</label>
+      <input id={`${idPrefix}-resume`} name="resume" type="file" accept=".pdf,.doc,.docx,.txt" class="w-full px-4 py-3 rounded-md bg-[#11122b] border border-blue-900/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-700 outline-none text-white placeholder-gray-400 transition file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:bg-blue-600/20 file:text-blue-200 hover:file:bg-blue-600/30" />
+      <p class="text-gray-400 text-sm mt-2">Optional. Max 5MB.</p>
+    </div>
+  )}
+
+  <div class="text-center mt-4">
+    <button type="submit" class="btn-glow animate-glow inline-block">{submitLabel}</button>
+  </div>
+</form>
+
+<script is:inline>
+  (function(){
+    // form submit handler (shared) – posts to /api/contact-multipart
+    window.__applyFormSubmit = async function(event){
+      event.preventDefault();
+      try {
+        const form = event.target;
+        const fd = new FormData(form);
+        const file = fd.get('resume');
+        if (file && file.size && file.size > 5 * 1024 * 1024) {
+          alert('Resume file is larger than 5MB.');
+          return false;
+        }
+        const res = await fetch('/api/contact-multipart', { method: 'POST', body: fd });
+        const result = await res.json();
+        if (result.success) {
+          alert('Message sent successfully!');
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again later.');
+        }
+      } catch (e) {
+        alert('Network error. Please try again later.');
+      }
+      return false;
+    }
+  })();
+
+  {(prefillJobFromQuery) && (
+    function(){
+      try {
+        const params = new URLSearchParams(location.search);
+        const job = params.get('job');
+        if (job) {
+          const el = document.getElementById(`${idPrefix}-job`);
+          if (el) el.value = job;
+        }
+      } catch {}
+    }()
+  )}
+</script>
+

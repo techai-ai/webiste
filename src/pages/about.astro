@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Us | TechAI Inc">
+  <section class="relative py-24 px-6 md:px-20 text-left overflow-hidden">
+    <!-- Right-side image only -->
+    <div aria-hidden="true" class="absolute inset-y-0 right-0 w-1/2 sm:w-2/3 md:w-1/2 bg-right bg-no-repeat" style="background-image: url('/about.png');"></div>
+    <!-- Background Glow -->
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-purple-800/10 to-black/30 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <h1 class="text-5xl font-bold text-white mb-8 text-center drop-shadow-[0_0_25px_rgba(37,99,235,0.4)]">
+        About <span class="text-blue-400">TechAI Inc</span>
+      </h1>
+      <div class="service-card bg-transparent border border-blue-900/40 rounded-xl p-6 md:p-8 shadow-[0_0_25px_rgba(37,99,235,0.2)] max-w-3xl mx-auto">
+        <p class="text-gray-300 text-lg leading-relaxed">
+          TechAI Inc is a next-generation AI company empowering businesses to unlock the power of
+          Artificial Intelligence and Machine Learning. Our mission is to bridge the gap between
+          human insight and intelligent automation - helping enterprises accelerate innovation,
+          optimize operations, and make smarter decisions.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed mt-6">
+          From strategy to production, we partner with product, data, and engineering teams to
+          identify high-impact use cases, design secure and scalable systems, and integrate AI into
+          existing workflows. We emphasize rapid prototyping, human-in-the-loop feedback, and
+          responsible governance so solutions are both reliable and adoptable.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed mt-4">
+          Our work spans generative AI and RAG, intelligent agents, forecasting, personalization,
+          computer vision, and modern MLOps. We build on cloud-native tooling and open standards so
+          your teams can operate, monitor, and evolve models with confidence.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed mt-4">
+          Above all, we believe AI should be safe, transparent, and measurable. Every engagement
+          aligns technical metrics with business KPIs, prioritizes privacy and security by design,
+          and focuses on long-term maintainability - not just short-term demos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 px-6 md:px-20 text-left bg-transparent">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+      <div class="bg-[#0e0f25]/70 border border-blue-900/40 rounded-2xl p-10 shadow-[0_0_25px_rgba(37,99,235,0.2)] hover:shadow-[0_0_35px_rgba(37,99,235,0.4)] transition">
+        <h2 class="text-3xl font-bold text-blue-400 mb-4 text-center">Our Mission</h2>
+        <p class="text-gray-300 text-base leading-relaxed">
+          To empower organizations to innovate faster through intelligent, explainable,
+          and human-centric AI solutions that enhance productivity, optimize resources,
+          and create measurable business impact.
+        </p>
+      </div>
+
+      <div class="bg-[#0e0f25]/70 border border-violet-900/40 rounded-2xl p-10 shadow-[0_0_25px_rgba(124,58,237,0.2)] hover:shadow-[0_0_35px_rgba(124,58,237,0.4)] transition">
+        <h2 class="text-3xl font-bold text-violet-400 mb-4 text-center">Our Vision</h2>
+        <p class="text-gray-300 text-base leading-relaxed">
+          To lead the transformation of industries through responsible, sustainable,
+          and intelligent AI ecosystems - enabling seamless collaboration between
+          humans and machines across every domain.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="py-20 px-6 md:px-20 text-left bg-transparent">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center drop-shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+      Our Core Expertise
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-8 bg-[#0e0f25]/70 border border-blue-900/40 rounded-xl hover:animate-glow transition">
+        <h3 class="text-xl font-semibold text-blue-400 mb-3">Generative AI</h3>
+        <p class="text-gray-300">Large Language Models, RAG pipelines, and conversational AI assistants for enterprise intelligence.</p>
+      </div>
+      <div class="p-8 bg-[#0e0f25]/70 border border-blue-900/40 rounded-xl hover:animate-glow transition">
+        <h3 class="text-xl font-semibold text-blue-400 mb-3">MLOps & Data Engineering</h3>
+        <p class="text-gray-300">End-to-end ML lifecycle automation, data pipelines, and cloud-native AI infrastructure.</p>
+      </div>
+      <div class="p-8 bg-[#0e0f25]/70 border border-blue-900/40 rounded-xl hover:animate-glow transition">
+        <h3 class="text-xl font-semibold text-blue-400 mb-3">AI Consulting</h3>
+        <p class="text-gray-300">Strategic advisory for AI adoption, cost optimization, and ethical model deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+</BaseLayout>

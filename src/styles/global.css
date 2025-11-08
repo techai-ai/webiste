@@ -1,0 +1,383 @@
+@import "tailwindcss";
+
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/700.css";
+
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #0b0d1f; /* fallback color */
+  background-image: url('/earth-glow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e2e8f0; /* soft gray text */
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background tilt (left ↔ right) up to 45 degrees */
+@keyframes bg-rotate-45 {
+  0%   { transform: perspective(1200px) rotateY(0deg) scale(1.08); }
+  100% { transform: perspective(1200px) rotateY(45deg) scale(1.08); }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* mirror the body background so only this layer rotates */
+  background-image: url('/earth-glow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  will-change: transform;
+  animation: bg-rotate-45 var(--bg-rotate-duration, 10s) ease-in-out infinite alternate;
+  z-index: -1; /* keep rotating background beneath page content */
+}
+
+/* removed rotating globe overlay */
+
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  text-shadow:
+    0 0 15px rgba(59, 130, 246, 0.3),
+    0 0 25px rgba(37, 99, 235, 0.2);
+}
+
+/* Gentle fade in/out for headlines */
+@keyframes fade-in-out {
+  from { opacity: 0.7; }
+  to   { opacity: 1; }
+}
+
+.fade-in-out {
+  animation: fade-in-out 4s ease-in-out infinite alternate;
+  will-change: opacity;
+}
+
+/* Particle shatter/gather for per-letter animation */
+@keyframes shatter {
+  0% { opacity: 1; transform: translate(0,0) rotate(0deg) scale(1); filter: blur(0px); }
+  50% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--rot, 0deg)) scale(0.98); filter: blur(2px); }
+}
+
+.particle {
+  display: inline-block;
+  animation: shatter 12s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow:
+    0 0 30px rgba(37, 99, 235, 0.7),
+    0 0 60px rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Removed globe spin utilities and masks */
+
+/* Smaller variant for compact CTAs */
+.btn-glow-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.animate-glow-purple {
+  animation: pulse-glow 4s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+}
+
+.animate-glow-blue {
+  animation: pulse-glow 3s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.5);
+}
+
+.cta-glow {
+  background: radial-gradient(circle at center,
+    rgba(37,99,235,0.15),
+    rgba(124,58,237,0.1),
+    transparent 70%);
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+
+/* Active navigation link styling */
+.nav-link-active {
+  color: #ffffff;
+  position: relative;
+}
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+/* AI tiles: neon edges + subtle hover glow */
+.ai-tiles .tile {
+  position: relative;
+  border-radius: 0.75rem; /* rounded-xl */
+  background: linear-gradient(135deg, rgba(14,15,37,0.92), rgba(9,10,30,0.82));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.ai-tiles .tile.tile--square { border-radius: 0 !important; border: 0 !important; box-shadow: none !important; }
+.ai-tiles .tile.tile--square::before { border-radius: 0 !important; }
+.ai-tiles .tile.tile--square { transition: none !important; }
+.ai-tiles .tile.tile--square:hover { transform: none !important; box-shadow: none !important; }
+.ai-tiles .tile.tile--square:hover::before { opacity: 0 !important; }
+
+/* Remove baseline gap under inline media to avoid 1px seam */
+.video-hero video { display: block; }
+.section-hd { display: inline-flex; align-items: center; gap: 0.5rem; }
+.section-hd::before { content: ''; width: 12px; height: 12px; border-radius: 9999px; display: inline-block; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85), rgba(59,130,246,0.9) 45%, rgba(124,58,237,0.85)); box-shadow: 0 0 10px rgba(59,130,246,0.6); }
+.ai-tiles .tile::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from 90deg at 50% 50%, rgba(59,130,246,0.45), rgba(124,58,237,0.45), rgba(236,72,153,0.35), rgba(59,130,246,0.45));
+  filter: blur(28px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.ai-tiles .tile:hover::before { opacity: .9; }
+.ai-tiles .tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 50px rgba(37, 99, 235, 0.25);
+  border-color: rgba(124, 58, 237, 0.45);
+}
+.ai-tiles .tile-title { letter-spacing: 0.01em; }
+.ai-tiles .tile-cta { opacity: 0; transform: translateY(6px); transition: all .25s ease; }
+.ai-tiles .tile:hover .tile-cta { opacity: 1; transform: translateY(0); }
+
+/* (reverted) removed background-image and tile-content helpers */
+
+/* Navbar hover effect matching tile glow */
+.nav-glow {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  transition: transform .2s ease, text-shadow .2s ease, color .2s ease;
+}
+
+/* Service card hover animation */
+.service-card {
+  position: relative;
+  transition: transform .32s cubic-bezier(.2,.8,.2,1), box-shadow .32s ease, border-color .32s ease, background-color .32s ease;
+  will-change: transform, box-shadow, background-color;
+  background-color: rgba(255,255,255,0.035); /* lighten base so it’s not too dark */
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from 90deg at 50% 50%, rgba(59,130,246,0.5), rgba(124,58,237,0.5), rgba(236,72,153,0.4), rgba(59,130,246,0.5));
+  filter: blur(28px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px) scale(1.10);
+  box-shadow: 0 18px 60px rgba(37,99,235,0.45);
+  border-color: rgba(124,58,237,0.65);
+  background-color: #000; /* turn background to black on hover */
+  z-index: 10;
+}
+.service-card:hover::before { opacity: .85; }
+
+/* Make hovered card larger relative to siblings */
+.services-grid:hover .service-card { transform: scale(0.95); opacity: 0.92; }
+.services-grid:hover .service-card:hover { transform: translateY(-6px) scale(1.10); opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .service-card::before { transition: none !important; }
+}
+
+/* Dropdown submenu item hover animation */
+.dropdown-grid a {
+  position: relative;
+  border-radius: 0.375rem; /* rounded-md */
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.dropdown-grid a::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  box-shadow: 0 0 10px rgba(59,130,246,0.6);
+  border-radius: 2px;
+  opacity: 0;
+  transition: width .18s ease, opacity .18s ease;
+  pointer-events: none;
+}
+.dropdown-grid a:hover {
+  transform: translateX(6px);
+  background-color: rgba(255,255,255,0.06);
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.dropdown-grid a:hover::before { width: 16px; opacity: 1; }
+
+/* Subtle pulsing ring for play button */
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.25); }
+  70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+.play-pulse { animation: pulseRing 2s ease-out infinite; }
+
+.nav-glow::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: conic-gradient(from 90deg at 50% 50%, rgba(59,130,246,0.5), rgba(124,58,237,0.5), rgba(236,72,153,0.35), rgba(59,130,246,0.5));
+  filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.nav-glow:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(59,130,246,0.55), 0 0 18px rgba(124,58,237,0.45);
+}
+.nav-glow:hover::before { opacity: .85; }
+
+/* Gradient card background matching Try Demo button */
+.card-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+/* Animated underline that slides between main nav items */
+.nav-hover-indicator {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  width: 0px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
+  transform: translateX(0);
+  opacity: 0;
+  transition: transform .22s ease, width .22s ease, opacity .18s ease;
+  pointer-events: none;
+}
+
+/* Visual workaround to hide solid black in non-transparent logos */
+.brand-logo {
+  mix-blend-mode: lighten;
+}
+/* (reverted) removed light nav override */
+
+/* (reverted) pill-ai removed */
+
+/* (reverted) dropcap rule removed */
+
+/* Debug layout mode: visualize content vs padding and a margin ring */
+:root {
+  --dbg-content: rgba(255, 0, 128, 0.12);
+  --dbg-padding: rgba(0, 128, 255, 0.12);
+  --dbg-border: rgba(0, 255, 128, 0.7);
+  --dbg-margin: rgba(255, 255, 0, 0.8);
+}
+
+/* Apply only to common container elements to avoid disrupting inline layout */
+.debug-boxes :where(div, section, article, header, footer, main, nav, aside, ul, li) {
+  position: relative;
+  outline: 1px solid var(--dbg-border);
+  /* Color padding vs content without replacing existing borders */
+  background-image:
+    linear-gradient(var(--dbg-padding), var(--dbg-padding)),
+    linear-gradient(var(--dbg-content), var(--dbg-content));
+  background-clip: padding-box, content-box;
+}
+
+.debug-boxes :where(div, section, article, header, footer, main, nav, aside, ul, li)::after {
+  content: '';
+  position: absolute;
+  inset: -6px; /* visual ring outside border (approx margin indicator) */
+  border: 1px dashed var(--dbg-margin);
+  pointer-events: none;
+}
+
+/* Size badge for debug mode */
+.dbg-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a; /* slate-900 */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-size: 10px;
+  line-height: 1;
+  padding: 3px 6px;
+  z-index: 2147483646;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+/* Hide original footer tagline in first column */
+footer .grid > div:first-child > p { display: none; }
+
+/* Ensure poster/video centers without covering full width when requested */
+.contain-poster video {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background-color: transparent;
+}
+
+/* Main nav active/hover color treatment */
+#mainNav a.nav-link {
+  transition: color .18s ease, text-shadow .18s ease;
+}
+#mainNav a.nav-link:hover,
+#mainNav a.nav-link:focus-visible {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(59,130,246,0.55), 0 0 18px rgba(124,58,237,0.45);
+}
+/* Selected (active) state across desktop + mobile nav */
+nav a.nav-link-active {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(59,130,246,0.55), 0 0 18px rgba(124,58,237,0.45);
+}
