@@ -4,17 +4,47 @@
 @import "@fontsource/manrope/500.css";
 @import "@fontsource/manrope/700.css";
 
+:root {
+  --bg-color: #0b0d1f;
+  --bg-surface: #0f172a;
+  --panel-color: rgba(11, 13, 31, 0.94);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --text-strong: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --card-surface: rgba(255, 255, 255, 0.035);
+  --card-hover: #000000;
+  --tile-surface: linear-gradient(135deg, rgba(14, 15, 37, 0.92), rgba(9, 10, 30, 0.82));
+  --tile-border: rgba(59, 130, 246, 0.25);
+  --bg-image: url('/earth-glow.png');
+  color-scheme: dark;
+}
 
-body {
+:root[data-theme="light"] {
+  --bg-color: #f6f7fb;
+  --bg-surface: #ffffff;
+  --panel-color: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(15, 23, 42, 0.08);
+  --text-strong: #0b1224;
+  --text-muted: #4b5563;
+  --card-surface: #ffffff;
+  --card-hover: #e7edff;
+  --tile-surface: linear-gradient(135deg, #ffffff, #eef2ff);
+  --tile-border: rgba(15, 23, 42, 0.12);
+  --bg-image: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.12), transparent 30%), radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.12), transparent 30%), radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.12), transparent 30%), #f6f7fb;
+  color-scheme: light;
+}
+
+.theme-body {
   font-family: 'Manrope', sans-serif;
-  background-color: #0b0d1f; /* fallback color */
-  background-image: url('/earth-glow.png');
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #e2e8f0; /* soft gray text */
+  color: var(--text-strong);
   min-height: 100vh;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,13 +55,13 @@ body {
   100% { transform: perspective(1200px) rotateY(45deg) scale(1.08); }
 }
 
-body::before {
+.theme-body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   /* mirror the body background so only this layer rotates */
-  background-image: url('/earth-glow.png');
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -44,6 +74,7 @@ body::before {
 /* removed rotating globe overlay */
 
 
+.theme-body,
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -148,8 +179,8 @@ input:focus, textarea:focus {
 .ai-tiles .tile {
   position: relative;
   border-radius: 0.75rem; /* rounded-xl */
-  background: linear-gradient(135deg, rgba(14,15,37,0.92), rgba(9,10,30,0.82));
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: var(--tile-surface);
+  border: 1px solid var(--tile-border);
   overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
@@ -199,7 +230,7 @@ input:focus, textarea:focus {
   position: relative;
   transition: transform .32s cubic-bezier(.2,.8,.2,1), box-shadow .32s ease, border-color .32s ease, background-color .32s ease;
   will-change: transform, box-shadow, background-color;
-  background-color: rgba(255,255,255,0.035); /* lighten base so it’s not too dark */
+  background-color: var(--card-surface); /* lighten base so it’s not too dark */
 }
 .service-card::before {
   content: '';
@@ -216,7 +247,7 @@ input:focus, textarea:focus {
   transform: translateY(-6px) scale(1.10);
   box-shadow: 0 18px 60px rgba(37,99,235,0.45);
   border-color: rgba(124,58,237,0.65);
-  background-color: #000; /* turn background to black on hover */
+  background-color: var(--card-hover); /* turn background to black on hover */
   z-index: 10;
 }
 .service-card:hover::before { opacity: .85; }
@@ -380,4 +411,118 @@ footer .grid > div:first-child > p { display: none; }
 nav a.nav-link-active {
   color: #ffffff !important;
   text-shadow: 0 0 10px rgba(59,130,246,0.55), 0 0 18px rgba(124,58,237,0.45);
+}
+
+.theme-surface {
+  background-color: var(--bg-surface);
+  color: var(--text-strong);
+}
+
+.theme-panel {
+  background-color: var(--panel-color);
+  color: var(--text-strong);
+  border-color: var(--panel-border);
+}
+
+.theme-border {
+  border-color: var(--panel-border);
+}
+
+.theme-text {
+  color: var(--text-strong);
+}
+
+.theme-muted {
+  color: var(--text-muted);
+}
+
+:root[data-theme="light"] .nav-glow:hover,
+:root[data-theme="light"] nav a.nav-link-active {
+  color: var(--text-strong) !important;
+  text-shadow: 0 0 10px rgba(59,130,246,0.35), 0 0 18px rgba(124,58,237,0.25);
+}
+
+:root[data-theme="light"] body.theme-body,
+:root[data-theme="light"] .theme-body {
+  color: var(--text-strong);
+}
+
+:root[data-theme="light"] .brand-logo {
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.06));
+}
+
+:root[data-theme="light"] .ai-tiles .tile {
+  box-shadow: 0 16px 55px rgba(15,23,42,0.12);
+}
+
+:root[data-theme="light"] .ai-tiles .tile:hover::before {
+  opacity: 0.6;
+}
+
+:root[data-theme="light"] .service-card {
+  box-shadow: 0 14px 45px rgba(15,23,42,0.12);
+}
+
+:root[data-theme="light"] .service-card:hover {
+  box-shadow: 0 18px 60px rgba(37,99,235,0.25);
+}
+
+:root[data-theme="light"] footer {
+  color: var(--text-strong);
+}
+
+:root[data-theme="light"] .text-gray-100,
+:root[data-theme="light"] .text-gray-200,
+:root[data-theme="light"] .text-gray-300,
+:root[data-theme="light"] .text-white {
+  color: var(--text-strong) !important;
+}
+
+:root[data-theme="light"] .text-gray-400,
+:root[data-theme="light"] .text-slate-400 {
+  color: var(--text-muted) !important;
+}
+
+:root[data-theme="light"] .hover\:text-white:hover {
+  color: var(--text-strong) !important;
+}
+
+:root[data-theme="light"] .hover\:bg-white\/5:hover {
+  background-color: rgba(15,23,42,0.05) !important;
+}
+
+:root[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(15,23,42,0.05) !important;
+}
+
+:root[data-theme="light"] .bg-\[\#0b0d1f\] {
+  background-color: #f8fafc !important;
+}
+
+:root[data-theme="light"] .nav-hover-indicator {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  box-shadow: 0 0 10px rgba(59,130,246,0.35);
+}
+
+:root[data-theme="light"] .btn-glow,
+:root[data-theme="light"] .btn-glow-sm,
+:root[data-theme="light"] #backToTop {
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .theme-body {
+    background-attachment: scroll; /* fixed backgrounds stutter on mobile */
+  }
+  .theme-body::before {
+    display: none; /* remove rotating layer for smoother mobile scroll */
+  }
+  .ai-tiles .tile {
+    min-height: auto !important;
+  }
+  .ai-tiles .tile img {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
 }

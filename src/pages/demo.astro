@@ -2,15 +2,61 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="AI Demo | TechAI Inc">
+<BaseLayout title="Data Q&A Copilot Demo">
   <!-- global background removed; no-op -->
 
   <section class="py-24 px-6 md:px-20 text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cyan-700/20 via-emerald-700/15 to-black/25 blur-3xl"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.35)]">Text-to-SQL <span class="text-cyan-400">Demo</span></h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.35)]">Data Q&A Copilot <span class="text-cyan-400">Demo</span></h1>
       <p class="text-gray-300 text-lg">Try a lightweight preview of our natural-language to SQL experience.</p>
+      
+      <div class="mt-10 bg-black/70 border border-white/10 rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(0,0,0,0.35)] grid md:grid-cols-2 gap-8 text-left">
+        <div class="space-y-5">
+          <p class="text-cyan-200 font-semibold tracking-wide uppercase text-xs">Built on Open_Data_QnA + Vertex AI, deployed securely in your cloud.</p>
+          <div class="grid grid-cols-1 gap-4">
+            <div class="h-full bg-[#0d1320] border border-cyan-900/40 rounded-xl p-4 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+              <div class="flex items-center gap-2 mb-2 text-cyan-200 text-xs font-semibold">01<span class="h-[1px] flex-1 bg-cyan-900/60"></span></div>
+              <div class="font-semibold text-white mb-1">Ask in English, answer from SQL</div>
+              <p class="text-gray-400 text-sm">Business users ask “What was our 2024 revenue by region and product?” and get accurate answers plus the exact SQL that ran on BigQuery / your DB.</p>
+            </div>
+            <div class="h-full bg-[#0d1320] border border-cyan-900/40 rounded-xl p-4 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+              <div class="flex items-center gap-2 mb-2 text-cyan-200 text-xs font-semibold">02<span class="h-[1px] flex-1 bg-cyan-900/60"></span></div>
+              <div class="font-semibold text-white mb-1">Secure, explainable, in your environment</div>
+              <p class="text-gray-400 text-sm">Runs inside your GCP/AWS/Azure account, honoring IAM, VPC, and data permissions. Every answer shows the generated SQL, tables used, and optional sample rows.</p>
+            </div>
+            <div class="h-full bg-[#0d1320] border border-cyan-900/40 rounded-xl p-4 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+              <div class="flex items-center gap-2 mb-2 text-cyan-200 text-xs font-semibold">03<span class="h-[1px] flex-1 bg-cyan-900/60"></span></div>
+              <div class="font-semibold text-white mb-1">Domain-tuned for your business</div>
+              <p class="text-gray-400 text-sm">We map your real metrics (MRR, churn, ARPU, shipment delays, claims, etc.) to underlying tables, and tune prompts &amp; logic for your industry (Finance, Travel, Logistics, Healthcare…).</p>
+            </div>
+            <div class="h-full bg-[#0d1320] border border-cyan-900/40 rounded-xl p-4 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+              <div class="flex items-center gap-2 mb-2 text-cyan-200 text-xs font-semibold">04<span class="h-[1px] flex-1 bg-cyan-900/60"></span></div>
+              <div class="font-semibold text-white mb-1">From pilot to production in weeks</div>
+              <p class="text-gray-400 text-sm">Start with 1–2 critical datasets and 10–20 key questions, then roll out with SSO, RBAC, monitoring, and ongoing SQL quality evaluation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0b111d] border border-cyan-900/40 rounded-xl p-6 shadow-[0_0_30px_rgba(37,99,235,0.2)] flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold">TAI</div>
+            <div class="text-left">
+            <div class="text-white font-semibold">Data Q&A Copilot</div>
+              <div class="text-gray-400 text-sm">High-level architecture</div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between gap-2 text-sm text-white">
+            <div class="flex-1 text-center bg-white/5 border border-white/10 rounded-lg py-3 px-2">Users</div>
+            <div class="text-cyan-300">→</div>
+            <div class="flex-1 text-center bg-white/5 border border-cyan-800/50 rounded-lg py-3 px-2">Q&amp;A Engine</div>
+            <div class="text-cyan-300">→</div>
+            <div class="flex-1 text-center bg-white/5 border border-cyan-800/50 rounded-lg py-3 px-2">Data Warehouse</div>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">Users ask questions via web, chat, or MCP-integrated tools; TechAI Data Q&amp;A Copilot generates and validates SQL via Open_Data_QnA, executes it on your warehouse, and returns governed, explainable answers.</p>
+        </div>
+      </div>
     </div>
   </section>
 
