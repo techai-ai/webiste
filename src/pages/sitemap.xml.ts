@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const routes = ['/', '/about', '/services', '/industries', '/careers', '/contact-us'];
+const routes = ['/', '/company', '/services', '/industries', '/careers', '/contact-us'];
 
 export const GET: APIRoute = async ({ site }) => {
   const base = site?.href ?? '';

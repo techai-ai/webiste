@@ -11,6 +11,89 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="relative z-10 max-w-4xl mx-auto bg-transparent border border-transparent backdrop-blur-0 rounded-2xl p-10">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.35)]">Data Q&A Copilot <span class="text-cyan-400">Demo</span></h1>
       <p class="text-gray-300 text-lg">Try a lightweight preview of our natural-language to SQL experience.</p>
+
+      <div class="mt-10 text-left space-y-6">
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">1</span>Natural Language Analytics on Any Data Source</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> Business users ask questions in plain English (“What were our top 10 products by margin last quarter in the US?”); the platform generates the right SQL, runs it, and returns answers, charts, and explanation.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Eliminates dependency on analysts, shortens decision cycles, and works across any cloud or database because everything is YAML-configured.</p>
+            <p><span class="font-semibold text-white">Where to use it:</span> Executives, Sales, Marketing teams, Analysts, PMs, and ops teams who need self-service KPIs without learning SQL or BI tools.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">2</span>SQL Co-Pilot for Data &amp; BI Teams</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> An AI SQL assistant built on Open_Data_QnA to help engineers and analysts write, optimize, and debug SQL across heterogeneous platforms.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Converts natural language to draft SQL, suggests joins/filters/aggregates, explains &amp; debugs queries, and adapts to multiple SQL dialects.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Gives sales and marketing teams instant insight into evolving trends while boosting both sales outcomes and analyst productivity.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">3</span>Automated Data Catalog &amp; Schema Documentation</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> Use the LLM pipeline to generate human-readable table and column descriptions across all databases.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Reads schema/keys/sample data, generates business-friendly descriptions and tags, and outputs YAML/JSON for catalogs or Git.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Reduces manual documentation, clarifies “what’s in the data,” and keeps docs versioned as code.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">4</span>Cross-System, Cross-Cloud Insights</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> A unified query experience across multiple databases and clouds without re-platforming.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Resolves which systems to hit, generates/executes per-source SQL, joins results at the platform layer, and returns a coherent answer.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Delivers “data fabric” style insights while keeping data in place; new systems are added via YAML configs.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">5</span>Governed, Role-Aware Data Access via Chat</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> A governed analytics assistant that honors your identity/RBAC and DB security rules.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Integrates IAM/groups/RLS, ensures each user only sees permitted data, and generates policy-aware SQL from declarative configs.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Enables AI-powered analytics without bypassing compliance; policies live centrally in YAML.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">6</span>Embedded “Ask Your Data” Widget</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> Embed Open_Data_QnA as a chat widget inside internal portals, CRM, ERP, or custom apps.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Context-aware questions (“Show last 6 months’ tickets for this customer”) with the same multi-cloud backend in a lightweight UI.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Puts analytics where people work, improving adoption and creating a consistent AI layer across apps.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">7</span>Data Onboarding &amp; Migration Assistant</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p><span class="font-semibold text-white">What it is:</span> An AI assistant for profiling, validating, and comparing datasets during migrations.</p>
+            <p><span class="font-semibold text-white">What it does:</span> Auto-generates profiling queries, compares source vs. target, and produces human-readable summaries of anomalies.</p>
+            <p><span class="font-semibold text-white">Why it matters:</span> Speeds migrations, reduces manual reconciliation, and gives PMs clear quality summaries.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-5">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">8</span>Industry-Specific Q&amp;A on Operational Data</h2>
+          <div class="space-y-3 text-gray-300 leading-relaxed text-sm">
+            <p class="text-white font-semibold">Examples:</p>
+            <ul class="list-disc list-inside space-y-1">
+              <li class="text-gray-300">Travel/Transportation: “How many moves by city, truck size, and day of week last quarter?”</li>
+              <li class="text-gray-300">Finance/Insurance: “Show net revenue, loss ratio, and claim frequency by product line and region.”</li>
+              <li class="text-gray-300">Healthcare/Life Sciences: “Count patients by cohort, treatment arm, and visit schedule.”</li>
+            </ul>
+            <p><span class="font-semibold text-white">Why it matters:</span> Vertical-ready through YAML configs for data sources, LLMs, and SQL dialects — the platform stays the same.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0c1522]/80 border border-cyan-900/40 rounded-2xl p-6 shadow-[0_0_28px_rgba(6,182,212,0.18)] space-y-3">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-200 text-sm font-semibold">9</span>One-Slide Summary</h2>
+          <p class="text-gray-300 text-sm leading-relaxed">Open Data QnA Platform (Powered by Google and elevated by TechAI): a configurable, multi-cloud, multi-LLM analytics assistant letting users ask in natural language and get trusted answers directly from databases. Works with any cloud/DB via YAML, supports business users and technical teams, and is built on Open_Data_QnA with enterprise-grade governance and future-ready LLM/embedding choices.</p>
+        </div>
+      </div>
       
       <div class="mt-10 bg-black/70 border border-white/10 rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(0,0,0,0.35)] grid md:grid-cols-2 gap-8 text-left">
         <div class="space-y-5">
