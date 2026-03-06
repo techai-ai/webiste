@@ -6,7 +6,7 @@ import VideoHero from "../components/VideoHero.astro";
   <div class="relative overflow-hidden">
   <!-- 🌌 HERO SECTION -->
   <section class="flex items-start justify-center px-6 md:px-20 pt-12 md:pt-16 pb-20 min-h-[60vh]">
-    <div class="text-center space-y-6 max-w-[900px] mx-auto">
+    <div class="text-center space-y-8 max-w-[900px] mx-auto">
       <div id="heroWelcome" class="hero-reveal inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/20 text-[12.9px] tracking-[0.25em] text-white/80 bg-white/5 backdrop-blur-sm mx-auto" style="--reveal-delay: 0ms;">
         WELCOME TO TECH AI
       </div>
@@ -30,7 +30,7 @@ import VideoHero from "../components/VideoHero.astro";
 
       <p id="heroBody" class="text-left text-gray-300 text-base md:text-lg leading-relaxed max-w-[900px] mx-auto font-medium px-4 md:px-0">
         <span id="heroBodyType">
-          <span class="hero-body-seg float-left text-white/80 text-5xl md:text-6xl font-light leading-[0.85] mr-2.5 mt-0.5 md:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">L</span><span class="hero-body-seg">everaging AI tools and technologies for demand forecasting, inventory optimization, cost reduction and driving business growth. We deliver cutting-edge solutions tailored to your unique needs. Our end-to-end services include </span><span class="text-blue-300 hero-body-seg">integration and deployment</span><span class="hero-body-seg">, </span><span class="text-blue-300 hero-body-seg">automated monitoring and maintenance</span><span class="hero-body-seg">, </span><span class="text-blue-300 hero-body-seg">scalable infrastructure management</span><span class="hero-body-seg">, and ensuring your models are always performing at their best.</span>
+          <span class="hero-body-seg float-left text-white/80 text-5xl md:text-6xl font-light leading-[0.85] mr-2.5 mt-0.5 md:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">L</span><span class="hero-body-seg">everaging AI tools and technologies for demand forecasting, inventory optimization, cost reduction and driving business growth. We deliver cutting-edge solutions tailored to your unique needs.</span><br /><span class="hero-body-seg">At TechAI, we help organizations unlock the power of Artificial Intelligence across leading enterprise ERP and CRM platforms such as </span><span class="hero-body-seg text-blue-300">Salesforce, NetSuite, SAP, and Oracle</span><span class="hero-body-seg">. By integrating AI-driven intelligence into core business systems, companies can automate operations, improve forecasting, enhance customer engagement, and make data-driven decisions in real time.</span>
         </span>
       </p>
       
@@ -49,11 +49,12 @@ import VideoHero from "../components/VideoHero.astro";
 
   <!-- ⚡ CAPABILITIES SECTION -->
   <section id="servicesSection" class="py-16 px-6 md:px-20">
-    <div class="flex justify-center mb-8">
+    <div class="flex justify-center mb-12">
       <div class="scroll-reveal inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/20 text-[12.9px] tracking-[0.25em] text-white/80 bg-white/5 backdrop-blur-sm" style="--reveal-delay: 0ms;">
         OUR SERVICES
       </div>
     </div>
+    <div class="services-content">
     <div class="ai-tiles ai-tiles-deck">
       <!-- Tile: Text-to-SQL -->
       <a href="/demo" class="service-carousel-item scroll-reveal tile group p-6 min-h-[420px] flex flex-col justify-between" style="--reveal-delay: 70ms;">
@@ -227,6 +228,53 @@ import VideoHero from "../components/VideoHero.astro";
         <span aria-hidden="true">-></span>
       </button>
     </div>
+    <aside class="scroll-reveal service-info-box" style="--reveal-delay: 180ms;">
+      <div class="service-info-scroll">
+      <h3 class="text-white text-2xl md:text-3xl font-semibold leading-tight">AI for <span class="text-blue-300">Salesforce</span></h3>
+      <p class="mt-5 text-gray-300 leading-relaxed">
+        Salesforce is one of the leading CRM platforms used by enterprises to manage customer relationships, sales pipelines, and marketing campaigns. TechAI enhances Salesforce capabilities with AI-powered automation and predictive insights.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        AI capabilities we implement with Salesforce include predictive lead scoring to identify high-value prospects, intelligent chatbots for customer engagement, automated case classification and resolution, sales forecasting models based on historical data, and generative AI tools that help sales teams generate emails, proposals, and responses automatically.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        We also integrate AI models with Salesforce data to enable real-time analytics dashboards, recommendation systems for upselling and cross-selling, and intelligent customer sentiment analysis.
+      </p>
+
+      <h3 class="mt-10 text-white text-2xl md:text-3xl font-semibold leading-tight">AI for <span class="text-blue-300">NetSuite ERP</span></h3>
+      <p class="mt-5 text-gray-300 leading-relaxed">
+        NetSuite is widely used for financial management, order management, inventory tracking, and business operations. TechAI integrates AI and machine learning to improve operational efficiency and financial forecasting.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Our AI-powered NetSuite solutions include demand forecasting for inventory optimization, automated financial anomaly detection, intelligent invoice processing, AI-driven supply chain optimization, and predictive revenue forecasting.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        By combining machine learning models with NetSuite data pipelines, organizations can automate routine financial processes, reduce operational risks, and gain predictive insights into business performance.
+      </p>
+
+      <h3 class="mt-10 text-white text-2xl md:text-3xl font-semibold leading-tight">AI for <span class="text-blue-300">SAP Systems</span></h3>
+      <p class="mt-5 text-gray-300 leading-relaxed">
+        SAP powers mission-critical operations for many large enterprises across manufacturing, logistics, finance, and supply chain management. TechAI integrates advanced AI capabilities with SAP environments to enable intelligent automation and predictive analytics.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Our SAP AI solutions include predictive maintenance for manufacturing equipment, supply chain optimization using machine learning, intelligent document processing for invoices and procurement documents, automated financial reconciliation, and AI-powered risk detection.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        We also build generative AI assistants that allow employees to query SAP systems using natural language, making enterprise data easier to access and analyze.
+      </p>
+
+      <h3 class="mt-10 text-white text-2xl md:text-3xl font-semibold leading-tight">AI for <span class="text-blue-300">Oracle ERP</span></h3>
+      <p class="mt-5 text-gray-300 leading-relaxed">
+        Oracle ERP systems manage enterprise finance, procurement, project management, and business operations. TechAI enhances Oracle environments with AI-powered analytics and automation tools.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Our Oracle AI solutions include automated expense classification, predictive financial forecasting, intelligent procurement analysis, AI-powered fraud detection, and automated document processing.
+      </p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        We also develop conversational AI assistants that enable users to interact with Oracle ERP systems through natural language queries, improving productivity and simplifying complex workflows.
+      </p>
+      </div>
+    </aside>
     </div>
   </section>
 
@@ -397,10 +445,39 @@ import VideoHero from "../components/VideoHero.astro";
     margin: 0;
   }
 
+  .services-content {
+    display: grid;
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+
+  .service-info-box {
+    border: 1px solid rgba(59, 130, 246, 0.26);
+    border-radius: 0.9rem;
+    background: linear-gradient(145deg, rgba(14, 15, 37, 0.92), rgba(8, 12, 31, 0.9));
+    box-shadow: 0 20px 56px rgba(8, 47, 122, 0.28);
+    padding: 1.4rem 1.45rem;
+    height: 530px;
+    overflow: hidden;
+  }
+
+  .service-info-scroll {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 0.2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .service-info-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
   .ai-tiles-deck .service-carousel-item {
     position: absolute;
     inset: 0;
-    min-height: 520px !important;
+    min-height: 510px !important;
     z-index: 1;
     pointer-events: none;
   }
@@ -485,12 +562,20 @@ import VideoHero from "../components/VideoHero.astro";
   }
 
   @media (max-width: 768px) {
+    .services-content {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
     .ai-tiles-deck {
       max-width: 100%;
       height: 460px;
     }
+    .service-info-box {
+      height: 470px;
+      padding: 1.1rem 1rem;
+    }
     .ai-tiles-deck .service-carousel-item {
-      min-height: 460px !important;
+      min-height: 450px !important;
     }
     .ai-tiles-deck .service-carousel-item[data-pos="0"] {
       transform: translateX(10px) translateY(-1px) scale(1.01);
@@ -704,6 +789,70 @@ import VideoHero from "../components/VideoHero.astro";
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) stop();
       else start();
+    });
+  })();
+
+  (function () {
+    const scrollNodes = Array.from(document.querySelectorAll(".service-info-scroll"));
+    if (!scrollNodes.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    scrollNodes.forEach((node) => {
+      let rafId = 0;
+      let lastTs = 0;
+      let resumeTimer = 0;
+      const speedPxPerSec = 60;
+
+      const step = (ts) => {
+        if (!lastTs) lastTs = ts;
+        const dt = (ts - lastTs) / 1000;
+        lastTs = ts;
+
+        const maxScroll = node.scrollHeight - node.clientHeight;
+        if (maxScroll > 0) {
+          node.scrollTop += speedPxPerSec * dt;
+          if (node.scrollTop >= maxScroll - 1) {
+            node.scrollTop = 0;
+          }
+        }
+        rafId = window.requestAnimationFrame(step);
+      };
+
+      const start = () => {
+        if (rafId) return;
+        rafId = window.requestAnimationFrame(step);
+      };
+
+      const stop = () => {
+        if (!rafId) return;
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+        lastTs = 0;
+      };
+
+      const scheduleResume = () => {
+        if (resumeTimer) window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(start, 900);
+      };
+
+      node.addEventListener("mouseenter", stop);
+      node.addEventListener("mouseleave", start);
+      node.addEventListener("touchstart", stop, { passive: true });
+      node.addEventListener("touchend", scheduleResume, { passive: true });
+      node.addEventListener("wheel", () => {
+        stop();
+        scheduleResume();
+      }, { passive: true });
+      node.addEventListener("touchmove", () => {
+        stop();
+        scheduleResume();
+      }, { passive: true });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      window.setTimeout(start, 450);
     });
   })();
 </script>
