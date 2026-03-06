@@ -19,16 +19,6 @@ const year = new Date().getFullYear();
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script is:inline>
-      (function () {
-        try {
-          const root = document.documentElement;
-          const stored = localStorage.getItem('theme');
-          const preferred = stored || 'dark'; // default to dark on first load
-          root.setAttribute('data-theme', preferred);
-        } catch (_) {}
-      })();
-    </script>
   </head>
   <body class="theme-body min-h-screen font-sans">
     <nav class="sticky top-0 z-50 px-6 md:px-20 py-5 flex items-center justify-between bg-transparent">
@@ -85,20 +75,6 @@ const year = new Date().getFullYear();
         </div>
         <a href="/careers" class="nav-link nav-glow hover:text-white transition">Careers</a>
         <a href="/contact-us" class="nav-link nav-glow hover:text-white transition">Contact</a>
-        <button id="themeToggle" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-md border theme-border theme-panel text-sm font-medium transition shadow-[0_0_18px_rgba(59,130,246,0.15)] hover:shadow-[0_0_24px_rgba(59,130,246,0.35)]" type="button" aria-label="Toggle color mode">
-          <span class="sun-icon" aria-hidden="true">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0-1.414-1.414M6.05 6.05 4.636 4.636" />
-            </svg>
-          </span>
-          <span class="moon-icon hidden" aria-hidden="true">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
-            </svg>
-          </span>
-          <span class="toggle-label">Light</span>
-        </button>
         <a href="/demo" class="btn-glow">Try Demo</a>
       </div>
     </nav>
@@ -156,23 +132,6 @@ const year = new Date().getFullYear();
         </div>
         <a href="/careers" class="block px-3 py-3 rounded-md hover:bg-white/5">Careers</a>
         <a href="/contact-us" class="block px-3 py-3 rounded-md hover:bg-white/5">Contact</a>
-        <button id="themeToggleMobile" class="mt-1 inline-flex items-center gap-2 px-3 py-3 rounded-md border theme-border theme-panel text-sm font-medium w-full justify-between transition" type="button" aria-label="Toggle color mode">
-          <span class="inline-flex items-center gap-2">
-            <span class="sun-icon" aria-hidden="true">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0-1.414-1.414M6.05 6.05 4.636 4.636" />
-              </svg>
-            </span>
-            <span class="moon-icon hidden" aria-hidden="true">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
-              </svg>
-            </span>
-            <span class="toggle-label">Light</span>
-          </span>
-          <span class="text-xs text-gray-400">Switch</span>
-        </button>
         <a href="/demo" class="block px-3 py-3 rounded-md hover:bg-white/5">Try Demo</a>
       </nav>
     </div>
@@ -185,19 +144,7 @@ const year = new Date().getFullYear();
           <div class="space-y-4">
             <img src="/logo.png" alt="TechAI logo" class="h-10 md:h-12 w-auto brand-logo" />
             <div class="flex items-center gap-4">
-              <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]">
-                <span class="sr-only">Facebook</span>
-                <span class="text-base font-semibold">f</span>
-              </a>
-              <a href="#" aria-label="X (Twitter)" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]">
-                <span class="sr-only">X</span>
-                <span class="text-base font-semibold">X</span>
-              </a>
-              <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]">
-                <span class="sr-only">Instagram</span>
-                <span class="text-base font-semibold">ig</span>
-              </a>
-              <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]">
+              <a href="https://www.linkedin.com/company/techai-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-slate-400/30 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400/60 transition shadow-[0_0_18px_rgba(59,130,246,0.25)] hover:shadow-[0_0_28px_rgba(59,130,246,0.45)]">
                 <span class="sr-only">LinkedIn</span>
                 <span class="text-base font-semibold">in</span>
               </a>
@@ -258,42 +205,6 @@ const year = new Date().getFullYear();
       </div>
     </footer>
     </main>
-
-    <script is:inline>
-      // Theme toggle (light/dark) with persistence and system fallback
-      (function(){
-        const root = document.documentElement;
-        const toggles = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')].filter(Boolean);
-        const media = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function applyTheme(theme, persist = true){
-          root.setAttribute('data-theme', theme);
-          if (persist) {
-            try { localStorage.setItem('theme', theme); } catch (_) {}
-          }
-          const isLight = theme === 'light';
-          toggles.forEach((btn) => {
-            const sun = btn.querySelector('.sun-icon');
-            const moon = btn.querySelector('.moon-icon');
-            const label = btn.querySelector('.toggle-label');
-            sun && sun.classList.toggle('hidden', !isLight);
-            moon && moon.classList.toggle('hidden', isLight);
-            if (label) label.textContent = isLight ? 'Light' : 'Dark';
-            btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-          });
-        }
-
-        const cycle = () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-        toggles.forEach((btn) => btn.addEventListener('click', cycle));
-
-        media.addEventListener('change', (e) => {
-          if (localStorage.getItem('theme')) return; // user preference wins
-          applyTheme(e.matches ? 'dark' : 'light', false);
-        });
-
-        applyTheme(root.getAttribute('data-theme') || 'dark', false);
-      })();
-    </script>
 
     <!-- Back to Top Button -->
     <button
