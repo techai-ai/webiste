@@ -4,6 +4,19 @@ import VideoHero from "../components/VideoHero.astro";
 ---
 <BaseLayout title="TechAI Inc | Empowering Businesses with AI" compactFooter={true}>
   <div class="relative overflow-hidden">
+  <video
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source src="/techai_dots_only_background.mp4" type="video/mp4" />
+  </video>
+  <div class="pointer-events-none absolute inset-0 bg-[#030712]/65"></div>
+  <div class="relative z-10">
   <!-- 🌌 HERO SECTION -->
   <section class="flex items-start justify-center px-6 md:px-20 pt-12 md:pt-16 pb-20 min-h-[60vh]">
     <div class="text-center space-y-8 max-w-[900px] mx-auto">
@@ -15,22 +28,22 @@ import VideoHero from "../components/VideoHero.astro";
         <span
           id="heroTypewriterLead"
           class="typewriter-line"
-          data-text="AI-Driven. "
+          data-text="Data-Driven. "
         >
-          AI-Driven.
+          Data-Driven.
         </span>
         <span
           id="heroTypewriterAccent"
           class="typewriter-line text-blue-400"
-          data-text="Tech-Enhanced."
+          data-text="AI-Enhanced."
         >
-          Tech-Enhanced.
+          AI-Enhanced.
         </span>
       </h1>
 
       <p id="heroBody" class="text-left text-gray-300 text-base md:text-lg leading-relaxed max-w-[900px] mx-auto font-medium px-4 md:px-0">
         <span id="heroBodyType">
-          <span class="hero-body-seg float-left text-white/80 text-5xl md:text-6xl font-light leading-[0.85] mr-2.5 mt-0.5 md:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">L</span><span class="hero-body-seg">everaging AI tools and technologies for demand forecasting, inventory optimization, cost reduction and driving business growth. We deliver cutting-edge solutions tailored to your unique needs.</span><br /><span class="hero-body-seg">At TechAI, we help organizations unlock the power of Artificial Intelligence across leading enterprise ERP and CRM platforms such as </span><span class="hero-body-seg text-blue-300">Salesforce, NetSuite, SAP, and Oracle</span><span class="hero-body-seg">. By integrating AI-driven intelligence into core business systems, companies can automate operations, improve forecasting, enhance customer engagement, and make data-driven decisions in real time.</span>
+          <span class="hero-body-seg float-left text-white/80 text-5xl md:text-6xl font-light leading-[0.85] mr-2.5 mt-0.5 md:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">L</span><span class="hero-body-seg">everaging Data tools and AI technologies for demand forecasting, inventory optimization, cost reduction and driving business growth. We deliver cutting-edge solutions tailored to your unique needs.</span><span class="hero-body-seg"> At TechAI, we help organizations unlock the power of Artificial Intelligence across leading enterprise ERP and CRM platforms such as </span><span class="hero-body-seg text-blue-300">Salesforce, NetSuite, SAP, and Oracle</span><span class="hero-body-seg">. By integrating AI-driven intelligence into core business systems, companies can automate operations, improve forecasting, enhance customer engagement, and make data-driven decisions in real time.</span>
         </span>
       </p>
       
@@ -366,6 +379,7 @@ import VideoHero from "../components/VideoHero.astro";
   </section>
 
   
+  </div>
   </div>
 
 <style>
@@ -859,3 +873,5 @@ import VideoHero from "../components/VideoHero.astro";
 
 </BaseLayout>
  
+
+
