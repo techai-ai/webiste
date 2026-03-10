@@ -22,8 +22,9 @@ const year = new Date().getFullYear();
   </head>
   <body class="theme-body min-h-screen font-sans">
     <nav class="sticky top-0 z-50 px-6 md:px-20 py-5 flex items-center justify-between bg-transparent">
-      <a href="/" data-no-active-style aria-label="TechAI Home" class="inline-flex items-center">
+      <a href="/" data-no-active-style aria-label="TechAI Home" class="inline-flex flex-col items-start leading-none">
         <img src="/logo.png" alt="TechAI logo" class="h-14 md:h-16 w-auto brand-logo" />
+        <span class="ml-[110px] md:ml-[126px] -mt-1 text-[11px] md:text-xs tracking-[0.08em] text-gray-300/90 whitespace-nowrap">Data, Amplified by AI</span>
       </a>
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-md border theme-border text-gray-200 hover:text-white hover:bg-white/5 transition" aria-label="Open menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -75,14 +76,15 @@ const year = new Date().getFullYear();
         </div>
         <a href="/careers" class="nav-link nav-glow hover:text-white transition">Careers</a>
         <a href="/contact-us" class="nav-link nav-glow hover:text-white transition">Contact</a>
-        <a href="/demo" class="btn-glow">Try Demo</a>
+        <a href="/demo" class="btn-glow">Explore</a>
       </div>
     </nav>
     <!-- Mobile menu overlay -->
     <div id="mobileMenu" class="md:hidden hidden fixed inset-0 z-50 theme-panel backdrop-blur-md">
       <div class="px-6 pt-5 pb-8 flex items-center justify-between">
-        <a href="/" data-no-active-style class="inline-flex items-center">
+        <a href="/" data-no-active-style class="inline-flex flex-col items-start leading-none">
           <img src="/logo.png" alt="TechAI logo" class="h-12 w-auto" />
+          <span class="ml-[104px] -mt-1 text-[11px] tracking-[0.08em] text-gray-300/90 whitespace-nowrap">Data, Amplified by AI</span>
         </a>
         <button id="mobileMenuClose" class="inline-flex items-center justify-center w-11 h-11 rounded-md border theme-border text-gray-200 hover:text-white hover:bg-white/5 transition" aria-label="Close menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -132,7 +134,7 @@ const year = new Date().getFullYear();
         </div>
         <a href="/careers" class="block px-3 py-3 rounded-md hover:bg-white/5">Careers</a>
         <a href="/contact-us" class="block px-3 py-3 rounded-md hover:bg-white/5">Contact</a>
-        <a href="/demo" class="block px-3 py-3 rounded-md hover:bg-white/5">Try Demo</a>
+        <a href="/demo" class="block px-3 py-3 rounded-md hover:bg-white/5">Explore</a>
       </nav>
     </div>
     <main id="app" class="transition-opacity duration-200">
